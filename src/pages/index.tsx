@@ -17,7 +17,7 @@ export async function getStaticProps(): GetStaticProps<PageProps> {
   });
   return {
     props: {
-      homeData: JSON.stringify(responseData),
+      homeData: responseData,
     },
   };
 }
