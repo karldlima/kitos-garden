@@ -1,7 +1,7 @@
 "use client";
 import { GetStaticProps } from "next";
 
-import { getEntry } from "../../content/provider";
+import { getPostIndex, getPost } from "@/content/helpers/index";
 
 export interface PageProps {
   post: any;
@@ -12,9 +12,7 @@ export default function SinglePostPage({ post }: PageProps) {
 }
 
 export async function getStaticPaths() {
-  const posts: any = await getEntry("/post-page", {
-    populate: ["posts"],
-  });
+  const posts: any = await getPostIndex();
 
   const paths = posts?.data?.attributes?.posts?.data?.map(
     (post: { attributes: { slug: string } }) => ({
@@ -26,12 +24,5 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }): GetStaticProps<PageProps> {
-  const responseData: any = await getEntry(
-    `/posts?filters[slug][$eq]=${params.slug}`
-  );
-  return {
-    props: {
-      post: responseData,
-    },
-  };
+  return await getPost(params);
 }

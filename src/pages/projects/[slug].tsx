@@ -1,7 +1,7 @@
 "use client";
 import { GetStaticProps } from "next";
 
-import { getEntry } from "../../content/provider";
+import { getProjectIndex, getProject } from "@/content/helpers/index";
 
 export interface PageProps {
   project: any;
@@ -12,26 +12,16 @@ export default function SingleProjectPage({ project }: PageProps) {
 }
 
 export async function getStaticPaths() {
-  const projects: any = await getEntry("/project-page", {
-    populate: ["projects"],
-  });
+  const projects: any = await getProjectIndex();
 
   const paths = projects?.data?.attributes?.projects?.data?.map(
     (project: { attributes: { slug: string } }) => ({
       params: { slug: project.attributes.slug },
     })
   );
-
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }): GetStaticProps<PageProps> {
-  const responseData: any = await getEntry(
-    `/projects?filters[slug][$eq]=${params.slug}`
-  );
-  return {
-    props: {
-      project: responseData,
-    },
-  };
+  return await getProject(params);
 }

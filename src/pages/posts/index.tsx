@@ -1,7 +1,7 @@
 "use client";
 import { GetStaticProps } from "next";
 
-import { getEntry } from "../../content/provider";
+import { getPostIndex } from "@/content/helpers/index";
 
 export interface PageProps {
   postPageData: any;
@@ -12,9 +12,7 @@ export default function PostIndexPage({ postPageData }: PageProps) {
 }
 
 export async function getStaticProps(): GetStaticProps<PageProps> {
-  const responseData: any = await getEntry("/post-page", {
-    populate: ["posts"],
-  });
+  const responseData: any = await getPostIndex();
   return {
     props: {
       postPageData: responseData,

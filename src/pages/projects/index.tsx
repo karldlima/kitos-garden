@@ -1,7 +1,7 @@
 "use client";
 import { GetStaticProps } from "next";
 
-import { getEntry } from "../../content/provider";
+import { getProjectIndex } from "@/content/helpers/index";
 
 export interface PageProps {
   projectPageData: any;
@@ -12,9 +12,7 @@ export default function PostIndexPage({ projectPageData }: PageProps) {
 }
 
 export async function getStaticProps(): GetStaticProps<PageProps> {
-  const responseData: any = await getEntry("/project-page", {
-    populate: ["projects"],
-  });
+  const responseData: any = await getProjectIndex();
   return {
     props: {
       projectPageData: responseData,

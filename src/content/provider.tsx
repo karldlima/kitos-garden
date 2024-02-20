@@ -1,6 +1,6 @@
 import qs from "qs";
 
-export function getURL(path = "") {
+function getURL(path = "") {
   return `${process.env.NEXT_PUBLIC_CMS_API_URL}${path}`;
 }
 
