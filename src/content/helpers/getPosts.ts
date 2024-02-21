@@ -2,7 +2,10 @@ import { getEntry } from "../provider";
 
 export const getPostIndex = async (): Promise<any> => {
   return await getEntry("/post-page", {
-    populate: ["posts"],
+    fields: ["title", "description"],
+    populate: {
+      posts: { fields: ["title", "slug", "description", "date", "blurb"] },
+    },
   });
 };
 

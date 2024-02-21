@@ -7,17 +7,15 @@ export interface PageProps {
   projectPageData: any;
 }
 
-export default function PostIndexPage({ projectPageData }: PageProps) {
+export default function ProjectIndexPage({ projectPageData }: PageProps) {
   return <div>Project Page</div>;
 }
 
 export async function getStaticProps(): GetStaticProps<PageProps> {
-  const responseData: any = await getProjectIndex();
+  const projectIndex: any = await getProjectIndex();
   return {
     props: {
-      projectPageData: responseData,
+      projectPageData: projectIndex,
     },
   };
 }
-
-// TODO: pagination for projects

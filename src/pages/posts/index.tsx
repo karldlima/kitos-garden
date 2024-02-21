@@ -12,12 +12,10 @@ export default function PostIndexPage({ postPageData }: PageProps) {
 }
 
 export async function getStaticProps(): GetStaticProps<PageProps> {
-  const responseData: any = await getPostIndex();
+  const postIndex: any = await getPostIndex();
   return {
     props: {
-      postPageData: responseData,
+      postPageData: postIndex,
     },
   };
 }
-
-// TODO: pagination for posts

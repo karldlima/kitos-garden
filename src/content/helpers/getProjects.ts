@@ -2,7 +2,10 @@ import { getEntry } from "../provider";
 
 export const getProjectIndex = async (): Promise<any> => {
   return await getEntry("/project-page", {
-    populate: ["projects"],
+    fields: ["title", "description"],
+    populate: {
+      projects: { fields: ["title", "slug", "description", "date", "blurb"] },
+    },
   });
 };
 
