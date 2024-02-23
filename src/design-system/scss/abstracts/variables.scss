@@ -1,0 +1,28 @@
+:root {
+  --padding-x: 2rem;
+
+  --100vh: 100vh;
+  --nav-height: 34px;
+  --100vh-minus-header: calc(
+    var(--100vh) - var(--alert-height) - var(--nav-height)
+  );
+
+  @media (min-width: theme("screens.sm")) {
+    --padding-x: Max(3rem, 8vmin);
+  }
+  @media (min-width: theme("screens.md")) {
+    --padding-x: Max(4rem, 4vmax);
+  }
+  @media (min-width: theme("screens.lg")) {
+    --side-margin: Max(100px, 12vw);
+  }
+
+  // Font Declarations
+  --font-primary: "Helvetica Neue", Helvetica, sans-serif;
+  --font-secondary: "E.G.", "Helvetica Neue", Helvetica, sans-serif;
+
+  // Colours
+  --colour-primary-bg: #bfbfbf;
+  --colour-secondary-bg: #6a6a6a;
+  --colour-highlight-bg: #48c3b9;
+}
