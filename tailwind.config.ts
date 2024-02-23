@@ -13,6 +13,17 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        rounds: ["var(--font-rounds)"],
+        avenir: ["var(--font-avenir-next)"],
+      },
+      borderRadius: {
+        DEFAULT: "25px",
+      },
+      boxShadow: {
+        DEFAULT:
+          "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+      },
     },
   },
   plugins: [],
