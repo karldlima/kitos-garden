@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import headerData from "@/data/headerData";
+import HeroIcon from "./HeroIcon";
 
 export const Header = (): JSX.Element => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,6 +21,7 @@ export const Header = (): JSX.Element => {
             alt={"kitos garden icon"}
             width={500}
             height={500}
+            priority="high"
           />
         </Link>
         <div className="block md:hidden">
@@ -55,13 +57,22 @@ export const Header = (): JSX.Element => {
           <div className="text-sm md:flex-grow space-x-0 md:space-x-10">
             {headerData?.map(({ link, uid }) => {
               return (
-                <Link
+                <div
+                  className="flex leading-6 text-gray-900 items-center mt-6 md:mt-0 md:inline-block"
                   key={uid}
-                  href={link.url}
-                  className="block leading-6 text-gray-900 navigation-link mt-6 md:mt-0 md:inline-block"
                 >
-                  {link.text}
-                </Link>
+                  <HeroIcon
+                    icon={link.icon}
+                    className="w-5 h-5 text-blue-500 md:hidden"
+                  />
+                  <Link
+                    key={uid}
+                    href={link.url}
+                    className="ml-3 navigation-link"
+                  >
+                    {link.text}
+                  </Link>
+                </div>
               );
             })}
           </div>
