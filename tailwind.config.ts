@@ -24,6 +24,18 @@ const config: Config = {
         DEFAULT:
           "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
       },
+      backgroundColor: {
+        primary: "var(--colour-primary-bg)",
+        secondary: "var(--colour-secondary-bg)",
+        highlight: "var(--colour-highlight-bg)",
+      },
+      colors: {
+        primary: "var(--colour-primary-text)",
+        secondary: "var(--colour-secondary-text)",
+        highlight: "var(--colour-highlight-text)",
+        primaryBrand: "var(--colour-primary-brand)",
+        secondaryBrand: "var(--colour-secondary-brand)",
+      },
     },
   },
   plugins: [],
