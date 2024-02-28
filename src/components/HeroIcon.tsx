@@ -9,14 +9,14 @@ interface HeroIconProps {
   className?: string;
 }
 
-const HeroIcon = ({
+export const HeroIcon = ({
   icon,
   outline = false,
   mini = false,
   version = "2.1.1",
   className = "w-6 h-6 text-slate-600",
   ...props
-}: HeroIconProps) => {
+}: HeroIconProps): JSX.Element => {
   const [svg, setSvg] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isErrored, setIsErrored] = useState(false);
@@ -40,5 +40,3 @@ const HeroIcon = ({
     />
   );
 };
-
-export default HeroIcon;

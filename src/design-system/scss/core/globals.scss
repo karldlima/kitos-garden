@@ -32,22 +32,14 @@ p {
   @apply font-avenir;
 }
 
-.navigation-link {
-  @apply font-avenir antialiased text-lg;
-  &:hover {
-    color: var(--colour-highlight-text);
-  }
-}
-
-.primary-button {
-  background-color: var(--colour-primary-brand);
-  color: #ffffff;
-  cursor: pointer;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  &:hover {
-    background-color: var(--colour-highlight-bg);
+.navigation {
+  &__link {
+    @apply font-avenir antialiased text-lg;
+    &:hover {
+      color: var(--colour-highlight-text);
+    }
+    &--active {
+      color: var(--colour-highlight-text);
+    }
   }
 }

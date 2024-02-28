@@ -8,7 +8,7 @@ export interface PageProps {
 }
 
 export default function PostIndexPage({ postPageData }: PageProps) {
-  return <div>Post Page</div>;
+  return <div className="h-[60rem]">Post Page</div>;
 }
 
 export async function getStaticProps(): GetStaticProps<PageProps> {

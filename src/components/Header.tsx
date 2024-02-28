@@ -1,12 +1,16 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import classNames from "classnames";
 
 import headerData from "@/data/headerData";
-import HeroIcon from "./HeroIcon";
+import { HeroIcon, ButtonLink } from "@/components/index";
 
 export const Header = (): JSX.Element => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const router = useRouter();
 
   return (
     <header className="bg-white border-b-2 sticky top-0">
@@ -27,7 +31,7 @@ export const Header = (): JSX.Element => {
         <div className="block md:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex items-center px-3 py-2 rounded text-black-500 hover:text-black-400"
+            className="flex items-center px-3 py-2 rounded text-primary hover:text-secondary"
           >
             <svg
               className={`fill-current h-3 w-3 ${
@@ -58,17 +62,22 @@ export const Header = (): JSX.Element => {
             {headerData?.map(({ link, uid }) => {
               return (
                 <div
-                  className="flex leading-6 text-gray-900 items-center mt-6 md:mt-0 md:inline-block"
+                  className="flex leading-6 text-primary items-center mt-6 md:mt-0 md:inline-block"
                   key={uid}
                 >
                   <HeroIcon
                     icon={link.icon}
-                    className="w-5 h-5 text-blue-500 md:hidden"
+                    className="w-5 h-5 text-primaryBrand md:hidden"
                   />
                   <Link
                     key={uid}
                     href={link.url}
-                    className="ml-3 navigation-link"
+                    className={classNames(
+                      router.pathname === link.url
+                        ? "navigation__link--active"
+                        : "",
+                      "ml-3 navigation__link"
+                    )}
                   >
                     {link.text}
                   </Link>
@@ -77,9 +86,7 @@ export const Header = (): JSX.Element => {
             })}
           </div>
           <div>
-            <button className="inline-flex items-center primary-button mt-6 md:mt-0">
-              Contact
-            </button>
+            <ButtonLink url="/contact">Contact</ButtonLink>
           </div>
         </div>
       </nav>
