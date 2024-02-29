@@ -1,15 +1,6 @@
-interface Link {
-  text: string;
-  url: string;
-  icon: string;
-}
+import { Anchor } from "@/data/index";
 
-interface HeaderLink {
-  uid: number;
-  link: Link;
-}
-
-export const headerData: HeaderLink[] = [
+export const headerData: Anchor[] = [
   { uid: 1, link: { text: "Home", url: "/", icon: "home-modern" } },
   { uid: 2, link: { text: "Posts", url: "/posts", icon: "book-open" } },
   {
@@ -17,5 +8,3 @@ export const headerData: HeaderLink[] = [
     link: { text: "Projects", url: "/projects", icon: "computer-desktop" },
   },
 ];
-
-export default headerData;

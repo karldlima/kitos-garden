@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import classNames from "classnames";
 
-import headerData from "@/data/headerData";
+import { headerData } from "@/data/index";
 import { HeroIcon, ButtonLink } from "@/components/index";
 
 export const Header = (): JSX.Element => {
@@ -13,14 +13,14 @@ export const Header = (): JSX.Element => {
   const router = useRouter();
 
   return (
-    <header className="bg-white border-b-2 sticky top-0">
+    <header className="bg-primary border-b-2 sticky top-0">
       <nav className="flex items-center justify-between flex-wrap p-6">
         <Link
           className="flex items-center flex-shrink-0 text-white mr-6 md:mr-72"
           href="/"
         >
           <Image
-            className="h-12 w-auto md:flex-1"
+            className="h-16 w-auto md:flex-1"
             src={"/assets/icons/k-icon.jpeg"}
             alt={"kitos garden icon"}
             width={500}
