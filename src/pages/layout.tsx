@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 import { avenir, rounds } from "@/design-system/utils/fonts";
-import { Header } from "@/components/index";
+import { Header, Footer } from "@/components/index";
 
 export default function RootLayout({
   children,
@@ -17,8 +17,8 @@ export default function RootLayout({
       )}
     >
       <Header />
-      <div className="grow py-6 lg:py-12">{children}</div>
-      {/* <Footer/> */}
+      <div className="bg-primary grow py-6 lg:py-12">{children}</div>
+      <Footer />
     </main>
   );
 }
