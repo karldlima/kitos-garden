@@ -1,4 +1,3 @@
-"use client";
 import { GetStaticProps } from "next";
 
 import { getPostIndex } from "@/content/helpers/index";

@@ -1,4 +1,3 @@
-"use client";
 import { GetStaticProps } from "next";
 
 import { getEntry } from "../content/provider";

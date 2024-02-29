@@ -1,4 +1,3 @@
-"use client";
 import { GetStaticProps } from "next";
 
 import { getProjectIndex, getProject } from "@/content/helpers/index";
