@@ -17,7 +17,7 @@ export default function RootLayout({
       )}
     >
       <Header />
-      <div className="bg-primary grow py-6 lg:py-12">{children}</div>
+      <div className="bg-primary grow">{children}</div>
       <Footer />
     </main>
   );

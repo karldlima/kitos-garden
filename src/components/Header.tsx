@@ -14,7 +14,7 @@ export const Header = (): JSX.Element => {
 
   return (
     <header className="bg-primary border-b-2 sticky top-0">
-      <nav className="flex items-center justify-between flex-wrap p-6">
+      <nav className="flex items-center justify-between flex-wrap p-4">
         <Link
           className="flex items-center flex-shrink-0 text-white mr-6 md:mr-72"
           href="/"
