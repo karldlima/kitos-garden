@@ -14,9 +14,9 @@ export const Footer = (): JSX.Element => {
         Footer
       </h2>
       <div className="mx-auto max-w-7xl px-6 py-4 md:px-8 md:pt-6">
-        <div className="grid lg:grid-cols-12 gap-8">
-          <div className="col-span-6 flex flex-col">
-            <Link href="/">
+        <div className="grid lg:grid-cols-12 gap-4">
+          <div className="col-span-6 flex items-center">
+            <Link className="w-fit" href="/">
               <Image
                 className="h-24 w-auto md:flex-1"
                 src={"/assets/icons/k-icon.jpeg"}
@@ -35,7 +35,7 @@ export const Footer = (): JSX.Element => {
             <div className="grid gap-1 md:grid-cols-2">
               {footerData.map(({ uid, link }) => (
                 <div
-                  className="leading-6 text-primary items-center mt-6 md:mt-0 md:inline-block"
+                  className="leading-6 text-primary items-center mt-3 md:mt-0 md:inline-block"
                   key={uid}
                 >
                   <Link
@@ -92,14 +92,16 @@ export const Footer = (): JSX.Element => {
             </a>
           </div>
         </div>
-        <div className="mt-4 border-t border-blue-500/30 pt-8 lg:mt-6 flex items-center justify-between self-end gap-y-5">
+        <div className="mt-4 border-t border-blue-500/30 pt-4 lg:mt-6 flex items-center justify-between gap-y-5">
           <div
-            className="leading-5"
-            dangerouslySetInnerHTML={{ __html: "copyright" }}
+            className="leading-5 text-primary"
+            dangerouslySetInnerHTML={{
+              __html: "© 2024 Karl's Garden. All rights reserved.",
+            }}
           />
           <div
-            className="leading-5"
-            dangerouslySetInnerHTML={{ __html: "alt" }}
+            className="leading-5 text-primary"
+            dangerouslySetInnerHTML={{ __html: "Melbourne based" }}
           />
         </div>
       </div>
