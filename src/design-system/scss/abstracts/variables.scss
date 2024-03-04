@@ -2,7 +2,7 @@
   --padding-x: 2rem;
 
   --100vh: 100vh;
-  --nav-height: 34px;
+  --nav-height: 64px;
   --100vh-minus-header: calc(
     var(--100vh) - var(--alert-height) - var(--nav-height)
   );
@@ -27,7 +27,7 @@
   --colour-highlight-bg: #724ac2;
 
   --colour-primary-text: #404040;
-  --colour-secondary-text: #1c1c1c;
+  --colour-secondary-text: theme("colors.gray.400");
   --colour-highlight-text: #724ac2;
 
   --colour-primary-brand: #5c3a9e;

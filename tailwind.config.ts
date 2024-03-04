@@ -36,6 +36,9 @@ const config: Config = {
         primaryBrand: "var(--colour-primary-brand)",
         secondaryBrand: "var(--colour-secondary-brand)",
       },
+      spacing: {
+        nav: "var(--nav-height)",
+      },
     },
   },
   plugins: [],
