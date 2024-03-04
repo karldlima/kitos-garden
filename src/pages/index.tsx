@@ -68,6 +68,13 @@ export default function Page({ homeData }: PageProps) {
           products and brands in various domains such as Telecom, Consulting
           Services, Banking and Car Rental.
         </p>
+        <p className="mt-2 w-4/5 md:mt-4 md:w-3/5 mx-auto leading-6">
+          I specialize in providing the following for small to medium business'
+          and larger companies: Responsive website development, monorepo
+          implementation, performance optimization, accessibility compliance,
+          end to end testing, maintenance and support, search engine
+          optimization.
+        </p>
         <h3 className="mt-6 w-4/5 md:mt-10 md:w-3/5 mx-auto">
           Beyond the Screen
         </h3>
@@ -77,6 +84,10 @@ export default function Page({ homeData }: PageProps) {
           adaptability to change. Growing up between cultures, embracing an open
           mind, I love connecting with people from all walks of life and thrive
           on the diversity of the human experience.
+        </p>
+        <p className="mt-2 w-4/5 md:mt-4 md:w-3/5 mx-auto leading-6">
+          If you have any further questions regarding my services, feel free to
+          contact me. Cheers!
         </p>
       </section>
     </div>

@@ -96,7 +96,7 @@ export const Footer = (): JSX.Element => {
           <div
             className="leading-5 text-primary"
             dangerouslySetInnerHTML={{
-              __html: "© 2024 Karl's Garden. All rights reserved.",
+              __html: "© 2024 Karl's Garden.",
             }}
           />
           <div
