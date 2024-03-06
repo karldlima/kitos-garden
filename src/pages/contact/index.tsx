@@ -6,7 +6,7 @@ export default function ContactIndexPage() {
     <>
       <Title title="Contact Me" />
       <div className="grid w-3/5 gap-10 md:grid-cols-12 mx-auto">
-        <div className="leading-6 md:w-4/5 md:mt-10 md:col-span-7">
+        <div className="leading-6 pr-6 md:col-span-7">
           <p>
             If you have any queries about responsive website development,
             performance optimization, accessibility compliance, E2E testing,
