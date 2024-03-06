@@ -10,17 +10,16 @@ export interface PageProps {
 
 export default function Page({ homeData }: PageProps) {
   return (
-    <div className="mb-16 md:mb-20">
+    <div>
       <section className="bg-secondary">
         <div className="grid ml-auto xl:gap-0 md:grid-cols-12">
-          <div className="order-2 mr-auto px-10 py-12 md:order-1 md:pb-0 md:px-12 md:pt-14 xl:px-16 xl:pt-18 md:col-span-5">
-            <h1 className="max-w-2xl mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-xl lg:text-2xl xl:text-6xl text-white">
+          <div className="order-2 mr-auto px-10 py-12 md:order-1 md:pb-0 md:px-12 md:pt-18 xl:px-16 xl:pt-22 md:col-span-5">
+            <h1 className="max-w-2xl mb-4 text-3xl font-extrabold tracking-tight leading-none md:text-3xl lg:text-4xl xl:text-6xl text-white">
               Kia Ora, I'm Karl
             </h1>
             <p className="max-w-2xl mb-6 font-light text-secondary text-lg md:mb-8 md:text-base lg:text-xl">
-              I'm a Frontend Software Developer and this is my blog/project
-              portfolio/digital garden of random software development tips and
-              thoughts
+              I'm a Frontend Software Developer and this is my digital garden of
+              projects and random software development tips & thoughts
             </p>
             <Link
               href="#about-me"
@@ -72,7 +71,7 @@ export default function Page({ homeData }: PageProps) {
           I specialize in providing the following for small to medium business'
           and larger companies: Responsive website development, monorepo
           implementation, performance optimization, accessibility compliance,
-          end to end testing, maintenance and support, search engine
+          end-to-end testing, maintenance and support, search engine
           optimization.
         </p>
         <h3 className="mt-6 w-4/5 md:mt-10 md:w-3/5 mx-auto">
