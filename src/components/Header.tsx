@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -29,6 +31,7 @@ export const Header = (): JSX.Element => {
           />
         </Link>
         <div className="block md:hidden">
+          {/* TODO: use Button component */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="flex items-center px-3 py-2 rounded text-primary"

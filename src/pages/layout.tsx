@@ -17,7 +17,7 @@ export default function RootLayout({
       )}
     >
       <Header />
-      <div className="bg-primary grow">{children}</div>
+      <div className="bg-primary grow mb-16 md:mb-20">{children}</div>
       <Footer />
     </main>
   );
