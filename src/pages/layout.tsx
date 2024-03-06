@@ -1,3 +1,4 @@
+import Head from "next/head";
 import classNames from "classnames";
 
 import { avenir, rounds } from "@/design-system/utils/fonts";
@@ -16,6 +17,9 @@ export default function RootLayout({
         "min-h-screen flex flex-col"
       )}
     >
+      <Head>
+        <link rel="shortcut icon" href="/assets/icons/k-icon.jpeg" />
+      </Head>
       <Header />
       <div className="bg-primary grow mb-16 md:mb-20">{children}</div>
       <Footer />
