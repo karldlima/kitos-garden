@@ -68,7 +68,6 @@ export function ContactForm() {
         templateParams
       )
       .then(() => {
-        console.log("message sent successfully");
         setFormSubmitted(true);
         setLoading(false);
       })

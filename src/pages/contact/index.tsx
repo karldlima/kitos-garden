@@ -1,4 +1,4 @@
-import { ContactForm } from "@/components/Forms/ContactForm";
+import { ContactForm } from "@/components/Forms/index";
 import { Title } from "@/components/index";
 
 export default function ContactIndexPage() {
