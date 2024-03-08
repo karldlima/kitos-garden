@@ -27,3 +27,4 @@ export const Button = ({
     {children}
   </button>
 );
+Button.displayName = "Button";

@@ -97,3 +97,4 @@ export const Header = (): JSX.Element => {
     </header>
   );
 };
+Header.displayName = "Header";

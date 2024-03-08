@@ -40,3 +40,4 @@ export const HeroIcon = ({
     />
   );
 };
+HeroIcon.displayName = "HeroIcon";

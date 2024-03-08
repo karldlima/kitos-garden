@@ -108,3 +108,4 @@ export const Footer = (): JSX.Element => {
     </footer>
   );
 };
+Footer.displayName = "Footer";

@@ -28,3 +28,4 @@ export const ButtonLink = ({
     {children}
   </NextLink>
 );
+ButtonLink.displayName = "ButtonLink";
