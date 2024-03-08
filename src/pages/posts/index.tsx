@@ -1,16 +1,34 @@
 import { GetStaticProps } from "next";
 
 import { getPostIndex } from "@/content/helpers/index";
+import { Title, DisplayCard } from "@/components/index";
 
 export interface PageProps {
   postPageData: any;
 }
 
 export default function PostIndexPage({ postPageData }: PageProps) {
-  return <div className="h-[60rem]">Post Page</div>;
+  const posts = postPageData?.data?.attributes?.posts?.data;
+  const { title, description } = postPageData?.data?.attributes;
+  return (
+    <>
+      <Title title={title} subtitle={description} />
+      <div className="columns-1 w-6/12 gap-y-12 mx-auto md:columns-2 md:w-8/12 lg:columns-3 lg:w-8/12 xl:w-7/12">
+        {posts?.map(({ attributes, id }) => (
+          <div
+            className="inline-block w-full mb-4 box-border p-1 max-w-sm"
+            key={id}
+          >
+            <DisplayCard cardData={attributes} />
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
 
 export async function getStaticProps(): GetStaticProps<PageProps> {
+  // TODO: typing for posts data
   const postIndex: any = await getPostIndex();
   return {
     props: {
