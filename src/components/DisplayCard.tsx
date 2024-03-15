@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { format } from "date-fns";
 
 import { getTechnologies } from "@/content/utils/index";
 
@@ -22,7 +23,10 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
 
   const { title, image, date, blurb, slug } = cardData ?? {};
   const newPath = `${router.asPath}/${slug}`;
-  const technologies = getTechnologies(cardData?.technologies?.data);
+  // TODO: move content specific logic up component tree
+  const technologies = getTechnologies(cardData?.technologies?.data).join(
+    " • "
+  );
   return (
     <div className="max-w-sm max-h-sm md:max-h-[624px] bg-primary rounded-lg shadow">
       <Link href={newPath}>
@@ -35,14 +39,18 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
         />
       </Link>
       <div className="p-5">
-        {!!date && <p className="text-xs text-primary">{date}</p>}
+        {!!date && (
+          <p className="text-xs text-primary">
+            {format(new Date(date), "MMM d, yyyy")}
+          </p>
+        )}
         <Link href={newPath}>
           <h2 className="mb-2 font-bold tracking-tight text-primary">
             {title}
           </h2>
         </Link>
         <p className="mb-3 text-secondary">{blurb}</p>
-        <p className="mb-3 text-primaryBrand">{technologies.join(" • ")}</p>
+        <p className="mb-3 text-primaryBrand">{technologies}</p>
         {/* TODO: use ButtonLink and implement cva for customized display */}
         <Link
           href={newPath}
