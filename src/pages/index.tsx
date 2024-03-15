@@ -48,9 +48,9 @@ export default function Page({ homeData }: PageProps) {
       </section>
       <section id="about-me" className="bg-primary">
         <p className="mt-14 w-4/5 mx-auto leading-6 md:w-3/5 md:mt-28">
-          I'm Karl. A software developer that enjoys creating reliable customer
-          facing solutions for growth focused business'. Here's a little about
-          me and what I do for work:
+          I&apos;m Karl. A software developer that enjoys creating reliable
+          customer facing solutions for growth focused business&apos;.
+          Here&apos;s a little about me and what I do for work:
         </p>
         <h3 className="mt-6 w-4/5 md:mt-10 md:w-3/5 mx-auto">About Me</h3>
         <p className="mt-2 w-4/5 md:mt-4 md:w-3/5 mx-auto leading-6">
@@ -64,7 +64,7 @@ export default function Page({ homeData }: PageProps) {
           I offer responsive website development, monorepo implementation,
           performance optimization, accessibility compliance, end-to-end
           testing, maintenance, support, and search engine optimization for
-          small to medium business' and larger companies.
+          small to medium business&apos; and larger companies.
         </p>
         <h3 className="mt-6 w-4/5 md:mt-10 md:w-3/5 mx-auto">
           Beyond the Screen

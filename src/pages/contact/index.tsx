@@ -11,8 +11,8 @@ export default function ContactIndexPage() {
             If you have any queries about responsive website development,
             performance optimization, accessibility compliance, E2E testing,
             maintenance and support, or SEO for your digital product, reach out
-            and let's have a conversation about how we can help add value to
-            your business.
+            and let&apos;s have a conversation about how we can help add value
+            to your business.
           </p>
           <a
             href="https://www.linkedin.com/in/karldlima/"

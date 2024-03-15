@@ -34,26 +34,25 @@ export default function SingleProjectPage({ project }: PageProps) {
           <Markdown>{description}</Markdown>
         </p>
         <p className="flex text-primaryBrand mb-4 gap-4">
-          {link?.map((l) => {
-            return (
-              <Link
-                href={l?.url ?? "#"}
-                target="_blank"
-                rel="noopener"
-                className="text-black dark:text-primaryBrand hover:text-highlight ml-3"
-              >
-                <span className="sr-only">{l?.linkType}</span>
-                <Image
-                  className="h-6"
-                  src={`/assets/icons/${l?.linkType}.svg`}
-                  alt={`${l?.linkType} icon`}
-                  width={25}
-                  height={50}
-                  priority="high"
-                />
-              </Link>
-            );
-          })}
+          {link?.map((l) => (
+            <Link
+              key={l?.id}
+              href={l?.url ?? "#"}
+              target="_blank"
+              rel="noopener"
+              className="text-black dark:text-primaryBrand hover:text-highlight ml-3"
+            >
+              <span className="sr-only">{l?.linkType}</span>
+              <Image
+                className="h-6"
+                src={`/assets/icons/${l?.linkType}.svg`}
+                alt={`${l?.linkType} icon`}
+                width={25}
+                height={50}
+                priority="high"
+              />
+            </Link>
+          ))}
         </p>
         <p className="text-xl text-primaryBrand">{techRefined}</p>
       </section>
