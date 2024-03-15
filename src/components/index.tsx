@@ -1,5 +1,5 @@
 export * from "./Header";
-export * from "./HeroIcon";
+export * from "./Icons/index";
 export * from "./Button";
 export * from "./ButtonLink";
 export * from "./Footer";
