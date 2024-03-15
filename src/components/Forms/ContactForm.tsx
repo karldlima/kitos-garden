@@ -66,8 +66,8 @@ export function ContactForm() {
 
     emailjs
       .send(
-        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID as string,
         templateParams
       )
       .then(() => {
