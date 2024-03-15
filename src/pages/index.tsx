@@ -38,7 +38,7 @@ export default function Page({ homeData }: PageProps) {
             <Image
               className="md:min-w-[580px] md:min-h-[356px]"
               src="/assets/hero/cafe.png"
-              alt="mockup"
+              alt="Karl in cafe"
               width={2000}
               height={2000}
               priority="high"
@@ -54,26 +54,24 @@ export default function Page({ homeData }: PageProps) {
         </p>
         <h3 className="mt-6 w-4/5 md:mt-10 md:w-3/5 mx-auto">About Me</h3>
         <p className="mt-2 w-4/5 md:mt-4 md:w-3/5 mx-auto leading-6">
-          Fuelled by curiosity, I found my way to Melbourne, blending my knack
-          for problem-solving with a software engineering career. With 6+ years
-          of experience, I'm primarily focused on using React/Redux, JavaScript,
-          testing libraries and analytics to build scalable solutions for
-          products and brands in various domains such as Telecom, Consulting
-          Services, Banking and Car Rental.
+          Fueled by curiosity, I ventured to Melbourne, merging my
+          problem-solving skills with a career in software engineering. With
+          over 6 years of experience, I specialize in React/Redux, JavaScript,
+          testing libraries, and analytics, crafting scalable solutions for
+          diverse industries like Telecom, Consulting, Banking, and Car Rental.
         </p>
         <p className="mt-2 w-4/5 md:mt-4 md:w-3/5 mx-auto leading-6">
-          I specialize in providing the following for small to medium business'
-          and larger companies: Responsive website development, monorepo
-          implementation, performance optimization, accessibility compliance,
-          end-to-end testing, maintenance and support, search engine
-          optimization.
+          I offer responsive website development, monorepo implementation,
+          performance optimization, accessibility compliance, end-to-end
+          testing, maintenance, support, and search engine optimization for
+          small to medium business' and larger companies.
         </p>
         <h3 className="mt-6 w-4/5 md:mt-10 md:w-3/5 mx-auto">
           Beyond the Screen
         </h3>
         <p className="mt-2 w-4/5 md:mt-4 md:w-3/5 mx-auto leading-6">
           Having immigrated to New Zealand in the early 2000s, my upbringing in
-          India and subsequent life in NZ have instilled in me a profound
+          Asia and subsequent life in NZ have instilled in me a profound
           adaptability to change. Growing up between cultures, embracing an open
           mind, I love connecting with people from all walks of life and thrive
           on the diversity of the human experience.
