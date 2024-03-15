@@ -49,7 +49,7 @@ export default function SingleProjectPage({ project }: PageProps) {
                 alt={`${l?.linkType} icon`}
                 width={25}
                 height={50}
-                priority="high"
+                priority={true}
               />
             </Link>
           ))}

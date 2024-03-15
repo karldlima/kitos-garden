@@ -27,7 +27,7 @@ export const Header = (): JSX.Element => {
             alt={"kitos garden icon"}
             width={500}
             height={500}
-            priority="high"
+            priority={true}
           />
         </Link>
         <div className="block md:hidden">

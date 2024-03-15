@@ -41,7 +41,7 @@ export default function Page({ homeData }: PageProps) {
               alt="Karl in cafe"
               width={2000}
               height={2000}
-              priority="high"
+              priority={true}
             />
           </div>
         </div>

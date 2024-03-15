@@ -23,7 +23,7 @@ export const Footer = (): JSX.Element => {
                 alt={"kitos garden icon"}
                 width={500}
                 height={500}
-                priority="high"
+                priority={true}
               />
             </Link>
             <h4 className="pl-6 w-4/5">
@@ -68,7 +68,7 @@ export const Footer = (): JSX.Element => {
                 alt={"github icon"}
                 width={25}
                 height={50}
-                priority="high"
+                priority={true}
               />
             </Link>
             <Link
@@ -84,7 +84,7 @@ export const Footer = (): JSX.Element => {
                 alt={"linkedin icon"}
                 width={25}
                 height={50}
-                priority="high"
+                priority={true}
               />
             </Link>
           </div>
