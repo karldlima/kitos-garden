@@ -45,7 +45,10 @@ export function ContactForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => emailjs.init(process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY), []);
+  useEffect(
+    () => emailjs.init(process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY as string),
+    []
+  );
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
