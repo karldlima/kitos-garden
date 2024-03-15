@@ -7,6 +7,8 @@ import { z } from "zod";
 import emailjs from "@emailjs/browser";
 
 import { Button } from "@/components/index";
+import { Input } from "./Input";
+import { Textarea } from "./Textarea";
 import {
   Form,
   FormControl,
@@ -14,9 +16,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./form";
-import { Input } from "./input";
-import { Textarea } from "./Textarea";
+} from "./Form";
 
 const formSchema = z.object({
   name: z
