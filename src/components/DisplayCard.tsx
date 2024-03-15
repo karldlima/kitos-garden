@@ -45,11 +45,11 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
           </p>
         )}
         <Link href={newPath}>
-          <h2 className="mb-2 font-bold tracking-tight text-primary">
+          <h2 className="text-4xl mb-2 font-bold tracking-tight text-primary md:text-3xl">
             {title}
           </h2>
         </Link>
-        <p className="mb-3 text-secondary">{blurb}</p>
+        <p className="text-xl mb-3 text-secondary md:text-base">{blurb}</p>
         <p className="mb-3 text-primaryBrand">{technologies}</p>
         {/* TODO: use ButtonLink and implement cva for customized display */}
         <Link
