@@ -15,11 +15,11 @@ export default function ProjectIndexPage({ projectPageData }: PageProps) {
   return (
     <>
       <Title title={title} subtitle={description} />
-      <div className="columns-1 w-10/12 gap-y-12 mx-auto md:columns-2 md:w-8/12 xl:w-6/12 2xl:w-5/12">
+      <div className="columns-1 w-8/12 gap-y-12 mx-auto md:columns-2 xl:w-6/12 2xl:w-5/12">
         {/* TODO: useMediaQuery hook to use original projects array in mobile view */}
         {orderedProjects?.map(({ attributes, id }) => (
           <div
-            className="block w-full mb-4 box-border p-1 max-w-sm mx-auto"
+            className="inline-block w-full mb-4 box-border p-1 max-w-sm"
             key={id}
           >
             <DisplayCard cardData={attributes} />

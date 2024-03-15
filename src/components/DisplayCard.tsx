@@ -33,7 +33,7 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
         <Image
           className="rounded-t-lg w-96 h-56 transition-all duration-[0.8s] ease-[ease] hover:opacity-75 hover:bg-black"
           src={image?.data?.attributes?.formats?.small?.url}
-          alt={"TODO"}
+          alt={title}
           width={360}
           height={240}
         />

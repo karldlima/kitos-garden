@@ -14,6 +14,9 @@ export default function SingleProjectPage({ project }: PageProps) {
   const { title, description, image, technologies, link } =
     project?.data?.[0]?.attributes ?? {};
   const techRefined = getTechnologies(technologies?.data).join(" • ");
+  const imageUrl =
+    image?.data?.attributes?.formats?.large?.url ??
+    image?.data?.attributes?.formats?.medium?.url;
   return (
     <>
       <section className="text-center my-8 md:my-16">
@@ -22,8 +25,8 @@ export default function SingleProjectPage({ project }: PageProps) {
       <section className="flex flex-col mx-auto w-8/12 md:w-6/12 min-h-screen">
         <Image
           className="w-[564px] h-fit self-center mb-8"
-          src={image?.data?.attributes?.formats?.large?.url}
-          alt={"TODO"}
+          src={imageUrl}
+          alt={title}
           width={800}
           height={800}
         />
