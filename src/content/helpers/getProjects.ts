@@ -13,7 +13,10 @@ export const getProjectIndex = async (): Promise<any> => {
   });
 };
 
-export const getProject = async (params): Promise<any> => {
+export interface ProjectParams {
+  slug: string;
+}
+export const getProject = async (params: ProjectParams): Promise<any> => {
   const responseData = await getEntry(
     `/projects?filters[slug][$eq]=${params.slug}&populate=*`
   );

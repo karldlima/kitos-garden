@@ -13,7 +13,10 @@ export const getPostIndex = async (): Promise<any> => {
   });
 };
 
-export const getPost = async (params): Promise<any> => {
+export interface PostParams {
+  slug: string;
+}
+export const getPost = async (params: PostParams): Promise<any> => {
   const responseData = await getEntry(
     `/posts?filters[slug][$eq]=${params.slug}&populate=*`
   );

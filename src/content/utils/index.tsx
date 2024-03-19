@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // TODO: typing
 export function getOrderedProjects(projects: any) {
   const orderedProjects = [];

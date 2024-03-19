@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { IconName } from "types/Icon";
 
 interface HeroIconProps {
-  icon: IconName;
+  icon: string;
   outline?: boolean;
   mini?: boolean;
   version?: string;
@@ -17,7 +16,7 @@ export const HeroIcon = ({
   className = "w-6 h-6 text-slate-600",
   ...props
 }: HeroIconProps): JSX.Element => {
-  const [svg, setSvg] = useState(null);
+  const [svg, setSvg] = useState<string>("");
   const [isLoaded, setIsLoaded] = useState(false);
   const [isErrored, setIsErrored] = useState(false);
 

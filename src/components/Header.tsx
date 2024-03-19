@@ -71,10 +71,12 @@ export const Header = (): JSX.Element => {
                   className="flex leading-6 text-primary items-center mt-6 md:mt-0 md:inline-block"
                   key={uid}
                 >
-                  <HeroIcon
-                    icon={link.icon}
-                    className="w-5 h-5 text-primaryBrand md:hidden"
-                  />
+                  {link?.icon && (
+                    <HeroIcon
+                      icon={link.icon}
+                      className="w-5 h-5 text-primaryBrand md:hidden"
+                    />
+                  )}
                   <Link
                     key={uid}
                     href={link.url}
