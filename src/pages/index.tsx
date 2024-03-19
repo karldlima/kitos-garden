@@ -1,10 +1,10 @@
-import { GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 import { HeroIcon } from "@/components/index";
 import { getEntry } from "../content/provider";
 
+// TODO: page props
 export interface PageProps {
   homeData: any;
 }
@@ -61,10 +61,11 @@ export default function Page({ homeData }: PageProps) {
           diverse industries like Telecom, Consulting, Banking, and Car Rental.
         </p>
         <p className="mt-2 w-4/5 md:mt-4 md:w-3/5 mx-auto leading-6">
-          I offer responsive website development, monorepo implementation,
-          performance optimization, accessibility compliance, end-to-end
-          testing, maintenance, support, and search engine optimization for
-          small to medium business&apos; and larger companies.
+          I'm particularly interested in responsive website development,
+          monorepo implementation, performance optimization, accessibility
+          compliance, end-to-end testing, maintenance, support, and search
+          engine optimization for small to medium business&apos; and larger
+          companies.
         </p>
         <h3 className="mt-6 w-4/5 md:mt-10 md:w-3/5 mx-auto">
           Beyond the Screen
@@ -88,7 +89,7 @@ export default function Page({ homeData }: PageProps) {
   );
 }
 
-export async function getStaticProps(): GetStaticProps<PageProps> {
+export async function getStaticProps(): Promise<{ props: PageProps }> {
   const responseData: any = await getEntry("/home", {
     populate: ["hero"],
   });

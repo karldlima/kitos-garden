@@ -1,9 +1,8 @@
-import { GetStaticProps } from "next";
 import Image from "next/image";
 import { format } from "date-fns";
 import Markdown from "react-markdown";
 
-import { getPostIndex, getPost } from "@/content/helpers/index";
+import { getPostIndex, getPost, PostParams } from "@/content/helpers/index";
 import { getTechnologies } from "@/content/utils/index";
 
 export interface PageProps {
@@ -57,6 +56,10 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }): GetStaticProps<PageProps> {
+export async function getStaticProps({
+  params,
+}: {
+  params: PostParams;
+}): Promise<PageProps> {
   return await getPost(params);
 }

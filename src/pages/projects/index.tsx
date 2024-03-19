@@ -1,5 +1,3 @@
-import { GetStaticProps } from "next";
-
 import { getProjectIndex } from "@/content/helpers/index";
 import { getOrderedProjects } from "@/content/utils/index";
 import { Title, DisplayCard } from "@/components/index";
@@ -30,7 +28,7 @@ export default function ProjectIndexPage({ projectPageData }: PageProps) {
   );
 }
 
-export async function getStaticProps(): GetStaticProps<PageProps> {
+export async function getStaticProps(): Promise<{ props: PageProps }> {
   // TODO: typing for projects data
   const projectIndex: any = await getProjectIndex();
   return {

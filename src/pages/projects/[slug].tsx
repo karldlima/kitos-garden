@@ -1,9 +1,12 @@
-import { GetStaticProps } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Markdown from "react-markdown";
 
-import { getProjectIndex, getProject } from "@/content/helpers/index";
+import {
+  getProjectIndex,
+  getProject,
+  ProjectParams,
+} from "@/content/helpers/index";
 import { getTechnologies } from "@/content/utils/index";
 
 export interface PageProps {
@@ -34,6 +37,8 @@ export default function SingleProjectPage({ project }: PageProps) {
           <Markdown>{description}</Markdown>
         </p>
         <p className="flex text-primaryBrand mb-4 gap-4">
+          {/* TODO: project data mapping */}
+          {/* @ts-ignore */}
           {link?.map((l) => (
             <Link
               key={l?.id}
@@ -71,6 +76,10 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }): GetStaticProps<PageProps> {
+export async function getStaticProps({
+  params,
+}: {
+  params: ProjectParams;
+}): Promise<PageProps> {
   return await getProject(params);
 }
