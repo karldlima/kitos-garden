@@ -61,7 +61,7 @@ export default function Page({ homeData }: PageProps) {
           diverse industries like Telecom, Consulting, Banking, and Car Rental.
         </p>
         <p className="mt-2 w-4/5 md:mt-4 md:w-3/5 mx-auto leading-6">
-          I'm particularly interested in responsive website development,
+          I&apos;m particularly interested in responsive website development,
           monorepo implementation, performance optimization, accessibility
           compliance, end-to-end testing, maintenance, support, and search
           engine optimization for small to medium business&apos; and larger
