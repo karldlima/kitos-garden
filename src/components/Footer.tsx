@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Image from "next/image";
-import { useRouter } from "next/router";
-import classNames from "classnames";
+import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import classNames from 'classnames';
 
-import { footerData } from "@/data/footerData";
+import { footerData } from '@/data/footerData';
 
 export const Footer = (): JSX.Element => {
   const router = useRouter();
@@ -19,8 +19,8 @@ export const Footer = (): JSX.Element => {
             <Link className="w-fit" href="/">
               <Image
                 className="h-24 w-auto md:flex-1"
-                src={"/assets/icons/k-icon.jpeg"}
-                alt={"kitos garden icon"}
+                src={'/assets/icons/k-icon.jpeg'}
+                alt={'kitos garden icon'}
                 width={500}
                 height={500}
                 priority={true}
@@ -43,9 +43,9 @@ export const Footer = (): JSX.Element => {
                     href={link.url}
                     className={classNames(
                       router.pathname === link.url
-                        ? "navigation__link--active"
-                        : "",
-                      "navigation__link"
+                        ? 'navigation__link--active'
+                        : '',
+                      'navigation__link',
                     )}
                   >
                     {link.text}
@@ -64,8 +64,8 @@ export const Footer = (): JSX.Element => {
               <span className="sr-only">GitHub</span>
               <Image
                 className="h-6"
-                src={"/assets/icons/github.svg"}
-                alt={"github icon"}
+                src={'/assets/icons/github.svg'}
+                alt={'github icon'}
                 width={25}
                 height={50}
                 priority={true}
@@ -80,8 +80,8 @@ export const Footer = (): JSX.Element => {
               <span className="sr-only">LinkedIn</span>
               <Image
                 className="h-6"
-                src={"/assets/icons/linkedin.svg"}
-                alt={"linkedin icon"}
+                src={'/assets/icons/linkedin.svg'}
+                alt={'linkedin icon'}
                 width={25}
                 height={50}
                 priority={true}
@@ -98,11 +98,11 @@ export const Footer = (): JSX.Element => {
           />
           <div
             className="leading-5 text-primary"
-            dangerouslySetInnerHTML={{ __html: "Melbourne based" }}
+            dangerouslySetInnerHTML={{ __html: 'Melbourne based' }}
           />
         </div>
       </div>
     </footer>
   );
 };
-Footer.displayName = "Footer";
+Footer.displayName = 'Footer';

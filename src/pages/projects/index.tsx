@@ -1,6 +1,6 @@
-import { getProjectIndex } from "@/content/helpers/index";
-import { getOrderedProjects } from "@/content/utils/index";
-import { Title, DisplayCard } from "@/components/index";
+import { getProjectIndex } from '@/content/helpers/index';
+import { getOrderedProjects } from '@/content/utils/index';
+import { Title, DisplayCard } from '@/components/index';
 
 export interface PageProps {
   projectPageData: any;

@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { useRouter } from "next/router";
-import classNames from "classnames";
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import classNames from 'classnames';
 
-import { headerData } from "@/data/index";
-import { HeroIcon, ButtonLink } from "@/components/index";
+import { headerData } from '@/data/index';
+import { HeroIcon, ButtonLink } from '@/components/index';
 
 export const Header = (): JSX.Element => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,8 +23,8 @@ export const Header = (): JSX.Element => {
         >
           <Image
             className="h-16 w-auto md:flex-1"
-            src={"/assets/icons/k-icon.jpeg"}
-            alt={"kitos garden icon"}
+            src={'/assets/icons/k-icon.jpeg'}
+            alt={'kitos garden icon'}
             width={500}
             height={500}
             priority={true}
@@ -38,8 +38,8 @@ export const Header = (): JSX.Element => {
           >
             <svg
               className={classNames(
-                "fill-current h-5 w-5",
-                mobileMenuOpen ? "hidden" : "block"
+                'fill-current h-5 w-5',
+                mobileMenuOpen ? 'hidden' : 'block',
               )}
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -48,8 +48,8 @@ export const Header = (): JSX.Element => {
             </svg>
             <svg
               className={classNames(
-                "fill-current h-5 w-5",
-                mobileMenuOpen ? "block" : "hidden"
+                'fill-current h-5 w-5',
+                mobileMenuOpen ? 'block' : 'hidden',
               )}
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -60,8 +60,8 @@ export const Header = (): JSX.Element => {
         </div>
         <div
           className={classNames(
-            "absolute top-nav w-full opacity-90 block flex-grow pb-5 pl-5 bg-primary md:static md:p-0 md:flex md:items-center md:w-auto",
-            mobileMenuOpen ? "block" : "hidden"
+            'absolute top-nav w-full opacity-90 block flex-grow pb-5 pl-5 bg-primary md:static md:p-0 md:flex md:items-center md:w-auto',
+            mobileMenuOpen ? 'block' : 'hidden',
           )}
         >
           <div className="text-sm md:flex-grow space-x-0 md:space-x-10">
@@ -83,9 +83,9 @@ export const Header = (): JSX.Element => {
                     href={link.url}
                     className={classNames(
                       router.pathname === link.url
-                        ? "navigation__link--active"
-                        : "",
-                      "ml-3 navigation__link"
+                        ? 'navigation__link--active'
+                        : '',
+                      'ml-3 navigation__link',
                     )}
                   >
                     {link.text}
@@ -100,4 +100,4 @@ export const Header = (): JSX.Element => {
     </header>
   );
 };
-Header.displayName = "Header";
+Header.displayName = 'Header';

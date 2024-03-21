@@ -1,9 +1,9 @@
-import Image from "next/image";
-import { format } from "date-fns";
-import Markdown from "react-markdown";
+import Image from 'next/image';
+import { format } from 'date-fns';
+import Markdown from 'react-markdown';
 
-import { getPostIndex, getPost, PostParams } from "@/content/helpers/index";
-import { getTechnologies } from "@/content/utils/index";
+import { getPostIndex, getPost, PostParams } from '@/content/helpers/index';
+import { getTechnologies } from '@/content/utils/index';
 
 export interface PageProps {
   post: any;
@@ -12,7 +12,7 @@ export interface PageProps {
 export default function SinglePostPage({ post }: PageProps) {
   const { title, category, description, image, date, technologies } =
     post?.data?.[0]?.attributes ?? {};
-  const techRefined = getTechnologies(technologies?.data).join(" • ");
+  const techRefined = getTechnologies(technologies?.data).join(' • ');
   const imageUrl =
     image?.data?.attributes?.formats?.large?.url ??
     image?.data?.attributes?.formats?.medium?.url;
@@ -36,7 +36,7 @@ export default function SinglePostPage({ post }: PageProps) {
           <Markdown>{description}</Markdown>
         </p>
         <p className="text-primary mb-4">
-          {format(new Date(date), "MMMM d, yyyy")}
+          {format(new Date(date), 'MMMM d, yyyy')}
         </p>
         <p className="text-xl text-primaryBrand">{techRefined}</p>
       </section>
@@ -50,7 +50,7 @@ export async function getStaticPaths() {
   const paths = posts?.data?.attributes?.posts?.data?.map(
     (post: { attributes: { slug: string } }) => ({
       params: { slug: post.attributes.slug },
-    })
+    }),
   );
 
   return { paths, fallback: false };

@@ -1,6 +1,6 @@
-import type { ReactNode } from "react";
-import NextLink from "next/link";
-import classNames from "classnames";
+import type { ReactNode } from 'react';
+import NextLink from 'next/link';
+import classNames from 'classnames';
 
 interface LinkProps {
   children: ReactNode;
@@ -20,12 +20,12 @@ export const ButtonLink = ({
   <NextLink
     className={classNames(
       className ||
-        "rounded w-fit inline-flex items-center cursor-pointer text-white bg-primaryBrand hover:bg-highlight px-4 py-2 font-semibold mt-6 md:mt-0 "
+        'rounded w-fit inline-flex items-center cursor-pointer text-white bg-primaryBrand hover:bg-highlight px-4 py-2 font-semibold mt-6 md:mt-0 ',
     )}
     href={url}
-    target={blank ? "_blank" : "_self"}
+    target={blank ? '_blank' : '_self'}
   >
     {children}
   </NextLink>
 );
-ButtonLink.displayName = "ButtonLink";
+ButtonLink.displayName = 'ButtonLink';

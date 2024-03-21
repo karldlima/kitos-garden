@@ -9,5 +9,5 @@ export interface Anchor {
   link: Link;
 }
 
-export * from "./footerData";
-export * from "./headerData";
+export * from './footerData';
+export * from './headerData';

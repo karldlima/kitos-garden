@@ -9,4 +9,4 @@ export const Title = ({ title, subtitle }: TitleProps): JSX.Element => (
     <h3 className="text-primary">{subtitle}</h3>
   </section>
 );
-Title.displayName = "Title";
+Title.displayName = 'Title';

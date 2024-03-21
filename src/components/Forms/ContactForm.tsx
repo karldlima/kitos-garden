@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import emailjs from "@emailjs/browser";
+import { useEffect, useState } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import emailjs from '@emailjs/browser';
 
-import { Button } from "@/components/index";
-import { Input } from "./Input";
-import { Textarea } from "./Textarea";
+import { Button } from '@/components/index';
+import { Input } from './Input';
+import { Textarea } from './Textarea';
 import {
   Form,
   FormControl,
@@ -16,29 +16,29 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./Form";
+} from './Form';
 
 const formSchema = z.object({
   name: z
     .string()
     .min(2, {
-      message: "Name must be at least 2 characters.",
+      message: 'Name must be at least 2 characters.',
     })
     .max(30, {
-      message: "Name must not be longer than 30 characters.",
+      message: 'Name must not be longer than 30 characters.',
     }),
   email: z.string().email(),
   message: z.string().max(160).min(10, {
-    message: "Message must be longer than 10 characters.",
+    message: 'Message must be longer than 10 characters.',
   }),
 });
 
 type ContactFormValues = z.infer<typeof formSchema>;
 
 const defaultValues: Partial<ContactFormValues> = {
-  name: "",
-  email: "",
-  message: "",
+  name: '',
+  email: '',
+  message: '',
 };
 
 export function ContactForm() {
@@ -47,13 +47,13 @@ export function ContactForm() {
 
   useEffect(
     () => emailjs.init(process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY as string),
-    []
+    [],
   );
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues,
-    mode: "onChange",
+    mode: 'onChange',
   });
 
   const onSubmit = (values: ContactFormValues) => {
@@ -68,14 +68,14 @@ export function ContactForm() {
       .send(
         process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID as string,
-        templateParams
+        templateParams,
       )
       .then(() => {
         setFormSubmitted(true);
         setLoading(false);
       })
       .catch((error) => {
-        console.error("error: ", error);
+        console.error('error: ', error);
         setLoading(false);
       });
   };

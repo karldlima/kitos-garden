@@ -1,13 +1,13 @@
-import Link from "next/link";
-import Image from "next/image";
-import Markdown from "react-markdown";
+import Link from 'next/link';
+import Image from 'next/image';
+import Markdown from 'react-markdown';
 
 import {
   getProjectIndex,
   getProject,
   ProjectParams,
-} from "@/content/helpers/index";
-import { getTechnologies } from "@/content/utils/index";
+} from '@/content/helpers/index';
+import { getTechnologies } from '@/content/utils/index';
 
 export interface PageProps {
   project: any;
@@ -16,7 +16,7 @@ export interface PageProps {
 export default function SingleProjectPage({ project }: PageProps) {
   const { title, description, image, technologies, link } =
     project?.data?.[0]?.attributes ?? {};
-  const techRefined = getTechnologies(technologies?.data).join(" • ");
+  const techRefined = getTechnologies(technologies?.data).join(' • ');
   const imageUrl =
     image?.data?.attributes?.formats?.large?.url ??
     image?.data?.attributes?.formats?.medium?.url;
@@ -42,7 +42,7 @@ export default function SingleProjectPage({ project }: PageProps) {
           {link?.map((l) => (
             <Link
               key={l?.id}
-              href={l?.url ?? "#"}
+              href={l?.url ?? '#'}
               target="_blank"
               rel="noopener"
               className="text-black dark:text-primaryBrand hover:text-highlight ml-3"
@@ -71,7 +71,7 @@ export async function getStaticPaths() {
   const paths = projects?.data?.attributes?.projects?.data?.map(
     (project: { attributes: { slug: string } }) => ({
       params: { slug: project.attributes.slug },
-    })
+    }),
   );
   return { paths, fallback: false };
 }

@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Image from "next/image";
-import { useRouter } from "next/router";
-import { format } from "date-fns";
+import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { format } from 'date-fns';
 
-import { getTechnologies } from "@/content/utils/index";
+import { getTechnologies } from '@/content/utils/index';
 
 interface DisplayCard {
   title: string;
@@ -25,7 +25,7 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
   const newPath = `${router.asPath}/${slug}`;
   // TODO: move content specific logic up component tree
   const technologies = getTechnologies(cardData?.technologies?.data).join(
-    " • "
+    ' • ',
   );
   return (
     <div className="max-w-sm max-h-sm md:max-h-[624px] bg-primary rounded-lg shadow">
@@ -41,7 +41,7 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
       <div className="p-3 md:p-5">
         {!!date && (
           <p className="text-xs text-primary">
-            {format(new Date(date), "MMM d, yyyy")}
+            {format(new Date(date), 'MMM d, yyyy')}
           </p>
         )}
         <Link href={newPath}>
@@ -62,4 +62,4 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
     </div>
   );
 };
-DisplayCard.displayName = "DisplayCard";
+DisplayCard.displayName = 'DisplayCard';

@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { HeroIcon } from "@/components/index";
-import { getEntry } from "../content/provider";
+import { HeroIcon } from '@/components/index';
+import { getEntry } from '../content/provider';
 
 // TODO: page props
 export interface PageProps {
@@ -78,7 +78,7 @@ export default function Page({ homeData }: PageProps) {
           on the diversity of the human experience.
         </p>
         <p className="mt-2 w-4/5 md:mt-4 md:w-3/5 mx-auto leading-6">
-          If you have any further questions regarding my services, feel free to{" "}
+          If you have any further questions regarding my services, feel free to{' '}
           <Link href="/contact" className="text-highlight">
             contact me
           </Link>
@@ -90,8 +90,8 @@ export default function Page({ homeData }: PageProps) {
 }
 
 export async function getStaticProps(): Promise<{ props: PageProps }> {
-  const responseData: any = await getEntry("/home", {
-    populate: ["hero"],
+  const responseData: any = await getEntry('/home', {
+    populate: ['hero'],
   });
   return {
     props: {

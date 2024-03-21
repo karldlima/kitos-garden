@@ -1,2 +1,2 @@
-export * from "./getPosts";
-export * from "./getProjects";
+export * from './getPosts';
+export * from './getProjects';

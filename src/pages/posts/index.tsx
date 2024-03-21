@@ -1,5 +1,5 @@
-import { getPostIndex } from "@/content/helpers/index";
-import { Title, DisplayCard } from "@/components/index";
+import { getPostIndex } from '@/content/helpers/index';
+import { Title, DisplayCard } from '@/components/index';
 
 // TODO: page props
 export interface PageProps {
