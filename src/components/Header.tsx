@@ -78,6 +78,7 @@ export const Header = (): JSX.Element => {
                     />
                   )}
                   <Link
+                    onClick={() => setMobileMenuOpen(false)}
                     key={uid}
                     href={link.url}
                     className={classNames(

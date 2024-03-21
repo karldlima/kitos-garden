@@ -38,14 +38,14 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
           height={240}
         />
       </Link>
-      <div className="p-5">
+      <div className="p-3 md:p-5">
         {!!date && (
           <p className="text-xs text-primary">
             {format(new Date(date), "MMM d, yyyy")}
           </p>
         )}
         <Link href={newPath}>
-          <h2 className="text-4xl mb-2 font-bold tracking-tight text-primary md:text-3xl">
+          <h2 className="text-3xl mb-2 font-bold tracking-tight text-primary md:text-2xl">
             {title}
           </h2>
         </Link>
