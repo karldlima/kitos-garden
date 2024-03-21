@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import Markdown from 'react-markdown';
 
 import {
@@ -15,6 +16,8 @@ export interface PageProps {
 }
 
 export default function SingleProjectPage({ project }: PageProps) {
+  const router = useRouter();
+
   const { title, description, image, technologies, link } =
     project?.data?.[0]?.attributes ?? {};
   const techRefined = getTechnologies(technologies?.data).join(' • ');
@@ -27,6 +30,27 @@ export default function SingleProjectPage({ project }: PageProps) {
         <title>{title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={description} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BlogPosting',
+              mainEntityOfPage: {
+                '@type': 'WebPage',
+                '@id': `https://www.gardenofkarl.com/projects/${router.pathname}`,
+              },
+              headline: title,
+              description: description,
+              image: imageUrl,
+              author: {
+                '@type': 'Person',
+                name: "Karl D'Lima",
+                url: 'https://www.gardenofkarl.com/#about-me',
+              },
+            }),
+          }}
+        />
       </Head>
       <section className="text-center my-8 md:my-16">
         <h1 className="mb-3 max-w-80 mx-auto">{title}</h1>

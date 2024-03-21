@@ -5,6 +5,18 @@ import Head from 'next/head';
 import { HeroIcon } from '@/components/index';
 import { getEntry } from '../content/provider';
 
+const jsonLd = {
+  '@context': 'https://schema.org/',
+  '@type': 'WebSite',
+  name: 'gardenofkarl',
+  url: 'www.gardenofkarl.com',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: '{search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
+
 // TODO: page props
 export interface PageProps {
   homeData: any;
@@ -18,6 +30,10 @@ export default function Page({ homeData }: PageProps) {
         <title>Home</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Portfolio and Blog" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </Head>
       <div>
         <section className="bg-secondary">
