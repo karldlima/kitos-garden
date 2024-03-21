@@ -1,9 +1,15 @@
+import Head from 'next/head';
 import { ContactForm } from '@/components/Forms/index';
 import { Title } from '@/components/index';
 
 export default function ContactIndexPage() {
   return (
     <>
+      <Head>
+        <title>Contact Me</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Contact Page" />
+      </Head>
       <Title title="Contact Me" />
       <div className="grid w-3/5 gap-10 md:grid-cols-12 mx-auto">
         <div className="leading-6 pr-6 md:col-span-7">

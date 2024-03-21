@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import { format } from 'date-fns';
 import Markdown from 'react-markdown';
@@ -18,6 +19,11 @@ export default function SinglePostPage({ post }: PageProps) {
     image?.data?.attributes?.formats?.medium?.url;
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content={description} />
+      </Head>
       <section className="text-center my-8 md:my-16">
         <h3 className="mb-3 text-primaryBrand">
           {category?.data?.attributes?.name}

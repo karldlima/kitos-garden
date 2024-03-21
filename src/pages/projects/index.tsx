@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { getProjectIndex } from '@/content/helpers/index';
 import { getOrderedProjects } from '@/content/utils/index';
 import { Title, DisplayCard } from '@/components/index';
@@ -12,6 +13,11 @@ export default function ProjectIndexPage({ projectPageData }: PageProps) {
   const orderedProjects = getOrderedProjects(projects);
   return (
     <>
+      <Head>
+        <title>Projects</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Software Projects" />
+      </Head>
       <Title title={title} subtitle={description} />
       <div className="columns-1 w-8/12 gap-y-12 mx-auto md:columns-2 xl:w-6/12 2xl:w-5/12">
         {/* TODO: useMediaQuery hook to use original projects array in mobile view */}
