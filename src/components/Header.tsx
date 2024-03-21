@@ -31,7 +31,7 @@ export const Header = (): JSX.Element => {
           />
         </Link>
         <div className="block md:hidden">
-          {/* TODO: use Button component */}
+          {/* TODO: #1 use Button component */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="flex items-center px-3 py-2 rounded text-primary"

@@ -8,7 +8,7 @@ export interface ButtonProps
   className?: string;
 }
 
-// TODO: add primary/secondary using cva
+// TODO: #1 add primary/secondary using cva
 export const Button = ({
   action,
   children,
