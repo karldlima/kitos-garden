@@ -34,7 +34,7 @@ export default function SinglePostPage({ post }: PageProps) {
               '@type': 'BlogPosting',
               mainEntityOfPage: {
                 '@type': 'WebPage',
-                '@id': `https://www.gardenofkarl.com/posts/${router.pathname}`,
+                '@id': `${process.env.NEXT_PUBLIC_SITE_URL}/posts/${router.pathname}`,
               },
               headline: title,
               description: description,
@@ -42,7 +42,7 @@ export default function SinglePostPage({ post }: PageProps) {
               author: {
                 '@type': 'Person',
                 name: "Karl D'Lima",
-                url: 'https://www.gardenofkarl.com/#about-me',
+                url: `${process.env.NEXT_PUBLIC_SITE_URL}/#about-me`,
               },
             }),
           }}

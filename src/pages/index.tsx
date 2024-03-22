@@ -9,7 +9,7 @@ const jsonLd = {
   '@context': 'https://schema.org/',
   '@type': 'WebSite',
   name: 'gardenofkarl',
-  url: 'www.gardenofkarl.com',
+  url: process.env.NEXT_PUBLIC_SITE_URL,
   potentialAction: {
     '@type': 'SearchAction',
     target: '{search_term_string}',

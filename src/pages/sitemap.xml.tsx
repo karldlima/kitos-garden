@@ -25,14 +25,12 @@ async function generateSitemap(): Promise<string> {
   const projects = await getProjectIndex();
   const posts = await getPostIndex();
 
-  const baseUrl = 'https://www.gardenofkarl.com';
-
   return `<?xml version="1.0" encoding="UTF-8"?>
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${projects?.data?.attributes?.projects?.data
       ?.map(({ attributes }) => {
         return `<url>
-      <loc>${baseUrl}/${attributes?.slug}</loc>
+      <loc>${process.env.NEXT_PUBLIC_SITE_URL}/${attributes?.slug}</loc>
       <lastmod>${format(parseISO(attributes?.updatedAt), 'MMM d, yyyy')}</lastmod>
     </url>`;
       })
@@ -40,7 +38,7 @@ async function generateSitemap(): Promise<string> {
     ${posts?.data?.attributes?.posts?.data
       ?.map(({ attributes }) => {
         return `<url>
-      <loc>${baseUrl}/${attributes?.slug}</loc>
+      <loc>${process.env.NEXT_PUBLIC_SITE_URL}/${attributes?.slug}</loc>
       <lastmod>${format(parseISO(attributes?.updatedAt), 'MMM d, yyyy')}</lastmod>
     </url>`;
       })
