@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import { getPostIndex } from '@/content/helpers/index';
-import { Title, DisplayCard } from '@/components/index';
+
+import { getPostIndex } from '@/content/helpers';
+import { Title, DisplayCard } from '@/components';
 
 // TODO: page props
 export interface PageProps {

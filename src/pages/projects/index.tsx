@@ -1,7 +1,8 @@
 import Head from 'next/head';
-import { getProjectIndex } from '@/content/helpers/index';
-import { getOrderedProjects } from '@/content/utils/index';
-import { Title, DisplayCard } from '@/components/index';
+
+import { getProjectIndex } from '@/content/helpers';
+import { getOrderedProjects } from '@/content/utils';
+import { Title, DisplayCard } from '@/components';
 
 export interface PageProps {
   projectPageData: any;

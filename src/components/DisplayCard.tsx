@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { format } from 'date-fns';
+import { parseISO, format } from 'date-fns';
 
 import { getTechnologies } from '@/content/utils/index';
 
@@ -41,7 +41,7 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
       <div className="p-3 md:p-5">
         {!!date && (
           <p className="text-xs text-primary">
-            {format(new Date(date), 'MMM d, yyyy')}
+            {format(parseISO(date), 'MMM d, yyyy')}
           </p>
         )}
         <Link href={newPath}>

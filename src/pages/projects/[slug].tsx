@@ -4,12 +4,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Markdown from 'react-markdown';
 
-import {
-  getProjectIndex,
-  getProject,
-  ProjectParams,
-} from '@/content/helpers/index';
-import { getTechnologies } from '@/content/utils/index';
+import { getProjectIndex, getProject, ProjectParams } from '@/content/helpers';
+import { getTechnologies } from '@/content/utils';
 
 export interface PageProps {
   project: any;

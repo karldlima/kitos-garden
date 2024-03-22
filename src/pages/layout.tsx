@@ -18,6 +18,9 @@ export default function RootLayout({
       )}
     >
       <Head>
+        <title>Layout</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="Portfolio Layout" />
         <link rel="shortcut icon" href="/assets/icons/k-icon.jpeg" />
       </Head>
       <Header />

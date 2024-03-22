@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import { format } from 'date-fns';
 import Markdown from 'react-markdown';
 
-import { getPostIndex, getPost, PostParams } from '@/content/helpers/index';
-import { getTechnologies } from '@/content/utils/index';
+import { getPostIndex, getPost, PostParams } from '@/content/helpers';
+import { getTechnologies } from '@/content/utils';
 
 export interface PageProps {
   post: any;

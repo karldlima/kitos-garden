@@ -6,7 +6,7 @@ export const getProjectIndex = async (): Promise<any> => {
     fields: ['title', 'description'],
     populate: {
       projects: {
-        fields: ['title', 'slug', 'date', 'blurb'],
+        fields: ['title', 'slug', 'date', 'blurb', 'updatedAt'],
         populate: ['image', 'technologies'],
       },
     },

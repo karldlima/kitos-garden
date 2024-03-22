@@ -6,7 +6,7 @@ export const getPostIndex = async (): Promise<any> => {
     fields: ['title', 'description'],
     populate: {
       posts: {
-        fields: ['title', 'slug', 'date', 'blurb'],
+        fields: ['title', 'slug', 'date', 'blurb', 'updatedAt'],
         populate: ['image', 'technologies', 'category'],
       },
     },
