@@ -47,6 +47,10 @@ export default function SingleProjectPage({ project }: PageProps) {
             }),
           }}
         />
+        <link
+          rel="canonical"
+          href={`${process.env.NEXT_PUBLIC_SITE_URL}/projects/${router.pathname}`}
+        />
       </Head>
       <section className="text-center my-8 md:my-16">
         <h1 className="mb-3 max-w-80 mx-auto">{title}</h1>

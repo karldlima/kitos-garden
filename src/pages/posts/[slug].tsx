@@ -47,6 +47,10 @@ export default function SinglePostPage({ post }: PageProps) {
             }),
           }}
         />
+        <link
+          rel="canonical"
+          href={`${process.env.NEXT_PUBLIC_SITE_URL}/posts/${router.pathname}`}
+        />
       </Head>
       <section className="text-center my-8 md:my-16">
         <h3 className="mb-3 text-primaryBrand">
