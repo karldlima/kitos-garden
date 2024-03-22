@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import emailjs from '@emailjs/browser';
 
-import { Button } from '@/components/index';
+import { Button } from '@/components';
 import { Input } from './Input';
 import { Textarea } from './Textarea';
 import {

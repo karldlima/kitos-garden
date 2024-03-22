@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { parseISO, format } from 'date-fns';
 
-import { getTechnologies } from '@/content/utils/index';
+import { getTechnologies } from '@/content/utils';
 
 interface DisplayCard {
   title: string;

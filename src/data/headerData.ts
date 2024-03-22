@@ -1,4 +1,4 @@
-import { Anchor } from '@/data/index';
+import { Anchor } from '@/data';
 
 export const headerData: Anchor[] = [
   { uid: 1, link: { text: 'Home', url: '/', icon: 'home-modern' } },

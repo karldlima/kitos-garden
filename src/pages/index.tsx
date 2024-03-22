@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import Head from 'next/head';
-import { HeroIcon } from '@/components/index';
+import { HeroIcon } from '@/components';
 import { getEntry } from '../content/provider';
 
 const jsonLd = {

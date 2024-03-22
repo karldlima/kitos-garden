@@ -2,7 +2,7 @@ import Head from 'next/head';
 import classNames from 'classnames';
 
 import { avenir, rounds } from '@/design-system/utils/fonts';
-import { Header, Footer } from '@/components/index';
+import { Header, Footer } from '@/components';
 
 export default function RootLayout({
   children,

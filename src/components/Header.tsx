@@ -6,8 +6,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 
-import { headerData } from '@/data/index';
-import { HeroIcon, ButtonLink } from '@/components/index';
+import { headerData } from '@/data';
+import { HeroIcon, ButtonLink } from '@/components';
 
 export const Header = (): JSX.Element => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
