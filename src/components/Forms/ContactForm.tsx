@@ -81,21 +81,32 @@ export function ContactForm() {
   };
 
   return !!formSubmitted ? (
-    <div className="h-full flex items-center">
+    <div role="alert" className="h-full flex items-center">
       <h2>Message sent successfully!</h2>
     </div>
   ) : (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form
+        role="form"
+        aria-label="Contact author"
+        id="send-message"
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-8"
+      >
         <div className="flex gap-6 mb-6">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel htmlFor="nameInput">Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Name" {...field} />
+                  <Input
+                    id="nameInput"
+                    aria-required="true"
+                    placeholder="Name"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -106,9 +117,14 @@ export function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel htmlFor="emailInput">Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Email" {...field} />
+                  <Input
+                    id="emailInput"
+                    aria-required="true"
+                    placeholder="Email"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -120,9 +136,11 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel htmlFor="messageTextArea">Message</FormLabel>
               <FormControl>
                 <Textarea
+                  id="messageTextArea"
+                  aria-required="true"
                   placeholder="Message"
                   className="resize-none"
                   {...field}

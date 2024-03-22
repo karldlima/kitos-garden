@@ -16,12 +16,18 @@ export const Header = (): JSX.Element => {
 
   return (
     <header className="z-50 bg-primary border-b-2 sticky top-0">
-      <nav className="flex items-center justify-between flex-wrap md:p-4">
+      <nav
+        role="navigation"
+        aria-describedby="A navigation element for the website"
+        aria-label="Main Navigation"
+        className="flex items-center justify-between flex-wrap md:p-4"
+      >
         <Link
           className="flex items-center flex-shrink-0 text-white mr-6 md:mr-72"
           href="/"
         >
           <Image
+            aria-hidden="true"
             className="h-16 w-auto md:flex-1"
             src={'/assets/icons/k-icon.jpeg'}
             alt={'kitos garden icon'}
@@ -33,10 +39,12 @@ export const Header = (): JSX.Element => {
         <div className="block md:hidden">
           {/* TODO: #1 use Button component */}
           <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="flex items-center px-3 py-2 rounded text-primary"
           >
             <svg
+              aria-label="Expand"
               className={classNames(
                 'fill-current h-5 w-5',
                 mobileMenuOpen ? 'hidden' : 'block',
@@ -47,6 +55,7 @@ export const Header = (): JSX.Element => {
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
             <svg
+              aria-label="Close"
               className={classNames(
                 'fill-current h-5 w-5',
                 mobileMenuOpen ? 'block' : 'hidden',
@@ -64,7 +73,11 @@ export const Header = (): JSX.Element => {
             mobileMenuOpen ? 'block' : 'hidden',
           )}
         >
-          <div className="text-sm md:flex-grow space-x-0 md:space-x-10">
+          <div
+            role="menubar"
+            aria-label="Main Navigation"
+            className="text-sm md:flex-grow space-x-0 md:space-x-10"
+          >
             {headerData?.map(({ link, uid }) => {
               return (
                 <div

@@ -35,6 +35,7 @@ export const HeroIcon = ({
     <div
       className={className}
       dangerouslySetInnerHTML={{ __html: svg }}
+      aria-hidden="true"
       {...props}
     />
   );

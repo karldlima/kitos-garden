@@ -9,7 +9,11 @@ export const Footer = (): JSX.Element => {
   const router = useRouter();
 
   return (
-    <footer className="bg-primary" aria-labelledby="footer-heading">
+    <footer
+      role="contentinfo"
+      className="bg-primary"
+      aria-labelledby="footer-heading"
+    >
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -18,6 +22,7 @@ export const Footer = (): JSX.Element => {
           <div className="col-span-6 flex items-center">
             <Link className="w-fit" href="/">
               <Image
+                aria-hidden="true"
                 className="h-24 w-auto md:flex-1"
                 src={'/assets/icons/k-icon.jpeg'}
                 alt={'kitos garden icon'}
