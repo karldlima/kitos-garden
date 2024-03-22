@@ -1,6 +1,6 @@
 This repository contains the source code for my personal portfolio and blog site. It is built using Next.js SSR, Tailwind CSS, Strapi CMS.
 
-The project article for this repo can be found [http://localhost:3000/projects/digital-garden](here)
+The project article for this repo can be found [here](http://www.gardenofkarl.com/projects/digital-garden)
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ I'm trying to use CSS variables for theming, along with tailwind config for opti
 
 ### Git
 
-We use conventional commits. For more information you can check out the [https://www.conventionalcommits.org/en/v1.0.0/](Conventional Commit Homepage).
+We use conventional commits. For more information you can check out the [Conventional Commit Homepage](https://www.conventionalcommits.org/en/v1.0.0/).
 
 ### ESLint and Type Checking
 
