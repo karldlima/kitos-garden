@@ -33,6 +33,6 @@ pnpm run check-types
 
 I've implemented Meta tags, JSON-LD Schemas, Sitemaps, robots.txt, Link tags, and Image optimization to ensure SEO optimization.
 
-### Accessability
+### Accessibility
 
 TBD
