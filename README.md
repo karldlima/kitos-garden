@@ -1,5 +1,7 @@
 This repository contains the source code for my personal portfolio and blog site. It is built using Next.js SSR, Tailwind CSS, Strapi CMS.
 
+The project article for this repo can be found [http://localhost:3000/projects/digital-garden](here)
+
 ## Getting Started
 
 First, run the development server:
