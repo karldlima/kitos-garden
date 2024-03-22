@@ -21,6 +21,7 @@ export const Footer = (): JSX.Element => {
         <div className="grid lg:grid-cols-12 gap-4">
           <div className="col-span-6 flex items-center">
             <Link className="w-fit" href="/">
+              <span className="sr-only">Page Icon</span>
               <Image
                 aria-hidden="true"
                 className="h-24 w-auto md:flex-1"
@@ -68,6 +69,7 @@ export const Footer = (): JSX.Element => {
             >
               <span className="sr-only">GitHub</span>
               <Image
+                aria-hidden="true"
                 className="h-6"
                 src={'/assets/icons/github.svg'}
                 alt={'github icon'}
@@ -84,6 +86,7 @@ export const Footer = (): JSX.Element => {
             >
               <span className="sr-only">LinkedIn</span>
               <Image
+                aria-hidden="true"
                 className="h-6"
                 src={'/assets/icons/linkedin.svg'}
                 alt={'linkedin icon'}

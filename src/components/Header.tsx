@@ -85,10 +85,13 @@ export const Header = (): JSX.Element => {
                   key={uid}
                 >
                   {link?.icon && (
-                    <HeroIcon
-                      icon={link.icon}
-                      className="w-5 h-5 text-primaryBrand md:hidden"
-                    />
+                    <>
+                      <span className="sr-only">{link.text}</span>
+                      <HeroIcon
+                        icon={link.icon}
+                        className="w-5 h-5 text-primaryBrand md:hidden"
+                      />
+                    </>
                   )}
                   <Link
                     onClick={() => setMobileMenuOpen(false)}
