@@ -30,15 +30,3 @@ Alternatively the following commands can be run to check:
 pnpm run lint
 pnpm run check-types
 ```
-
-### SEO
-
-I've implemented Meta tags, JSON-LD Schemas, Sitemaps, robots.txt, Link tags, and Image optimization to ensure SEO optimization.
-
-### Accessibility
-
-To make the application more accessible, we must consider:
-
-- WAI-ARIA standards for designing the JSX *structure* of your app, to prevent the exclusion of anyone living with motor, cognitive, audio, or visual differences.
-  This includes ARIA attributes (role, aria-describedby, aria-labelledby, aria-label),
-- WCAG guide for making the *content* of the app more accessible, to improve online content accessibility. This includes focus management.
