@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Design system
 
-I'm trying to use CSS variables for theming, along with tailwind config for optimal reusability. I'm also attempting to maintain these reusable base components so they can be transferred over to a custom component library at some point. I plan to use cva for theme variants.
+I'm planning to use CSS variables for theming (if need be), along with tailwind config for optimal reusability. I'm also attempting to maintain these reusable base components so they can be transferred over to a custom component library at some point. I plan to use cva for component variants.
 
 ### Git
 
