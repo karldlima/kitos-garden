@@ -18,7 +18,7 @@ export const Header = (): JSX.Element => {
     <header className="z-50 bg-primary border-b-2 sticky top-0">
       <nav
         role="navigation"
-        aria-describedby="A navigation element for the website"
+        aria-description="A navigation element for the website"
         aria-label="Main Navigation"
         className="flex items-center justify-between flex-wrap md:p-4"
       >
@@ -83,6 +83,7 @@ export const Header = (): JSX.Element => {
                 <div
                   className="flex leading-6 text-primary items-center mt-6 md:mt-0 md:inline-block"
                   key={uid}
+                  role="menuitem"
                 >
                   {link?.icon && (
                     <>

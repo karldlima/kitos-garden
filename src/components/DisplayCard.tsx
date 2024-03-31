@@ -33,7 +33,7 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
         <Image
           className="rounded-t-lg w-96 h-56 transition-all duration-[0.8s] ease-[ease] hover:opacity-75 hover:bg-black"
           src={image?.data?.attributes?.formats?.small?.url}
-          alt={title}
+          alt={`display image - ${title}`}
           width={360}
           height={240}
         />
@@ -49,7 +49,7 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
             {title}
           </h2>
         </Link>
-        <p className="text-xl mb-3 text-secondary md:text-base">{blurb}</p>
+        <p className="text-xl mb-3 text-primary md:text-base">{blurb}</p>
         <p className="mb-3 text-primaryBrand">{technologies}</p>
         {/* TODO: use ButtonLink and implement cva for customized display */}
         <Link
@@ -57,6 +57,7 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
           className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center rounded bg-secondary hover:bg-gray-800 text-white"
         >
           Read more
+          <span className="sr-only">about {title}</span>
         </Link>
       </div>
     </div>
