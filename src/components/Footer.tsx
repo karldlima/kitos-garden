@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import classNames from 'classnames';
 
 import { footerData } from '@/data/footerData';
+import { cn } from './utils';
 
 export const Footer = (): JSX.Element => {
   const router = useRouter();
@@ -47,9 +47,10 @@ export const Footer = (): JSX.Element => {
                   <Link
                     key={uid}
                     href={link.url}
-                    className={classNames(
+                    className={cn(
                       router.pathname === link.url
-                        ? 'navigation__link--active'
+                        ? // TODO: convert scss to tailwind config?
+                          'navigation__link--active'
                         : '',
                       'navigation__link',
                     )}

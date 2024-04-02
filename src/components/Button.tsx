@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import classNames from 'classnames';
+
+import { cn } from './utils';
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,7 +18,7 @@ export const Button = ({
 }: ButtonProps): JSX.Element => (
   <button
     type="button"
-    className={classNames(
+    className={cn(
       className ||
         'rounded w-fit inline-flex items-center cursor-pointer text-white bg-primaryBrand hover:bg-highlight px-4 py-2 font-semibold mt-6 md:mt-0',
     )}

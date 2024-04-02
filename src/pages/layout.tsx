@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import classNames from 'classnames';
 
 import { avenir, rounds } from '@/design-system/utils/fonts';
-import { Header, Footer } from '@/components';
+import { Header, Footer, cn } from '@/components';
 
 export default function RootLayout({
   children,
@@ -11,7 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <main
-      className={classNames(
+      className={cn(
         rounds.variable,
         avenir.variable,
         'min-h-screen flex flex-col',

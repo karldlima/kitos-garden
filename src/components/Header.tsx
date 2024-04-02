@@ -4,10 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import classNames from 'classnames';
 
 import { headerData } from '@/data';
-import { HeroIcon, ButtonLink } from '@/components';
+import { HeroIcon, ButtonLink, cn } from '@/components';
 
 export const Header = (): JSX.Element => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -45,7 +44,7 @@ export const Header = (): JSX.Element => {
           >
             <svg
               aria-label="Expand"
-              className={classNames(
+              className={cn(
                 'fill-current h-5 w-5',
                 mobileMenuOpen ? 'hidden' : 'block',
               )}
@@ -56,7 +55,7 @@ export const Header = (): JSX.Element => {
             </svg>
             <svg
               aria-label="Close"
-              className={classNames(
+              className={cn(
                 'fill-current h-5 w-5',
                 mobileMenuOpen ? 'block' : 'hidden',
               )}
@@ -68,7 +67,7 @@ export const Header = (): JSX.Element => {
           </button>
         </div>
         <div
-          className={classNames(
+          className={cn(
             'absolute top-nav w-full opacity-90 block flex-grow pb-5 pl-5 bg-primary md:static md:p-0 md:flex md:items-center md:w-auto',
             mobileMenuOpen ? 'block' : 'hidden',
           )}
@@ -98,9 +97,10 @@ export const Header = (): JSX.Element => {
                     onClick={() => setMobileMenuOpen(false)}
                     key={uid}
                     href={link.url}
-                    className={classNames(
+                    className={cn(
                       router.pathname === link.url
-                        ? 'navigation__link--active'
+                        ? // TODO: convert scss to tailwind config?
+                          'navigation__link--active'
                         : '',
                       'ml-3 navigation__link',
                     )}
