@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { parseISO, format } from 'date-fns';
 
 import { getTechnologies } from '@/content/utils';
+import { ButtonLink } from './ButtonLink';
 
 interface DisplayCard {
   title: string;
@@ -51,14 +52,10 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
         </Link>
         <p className="text-xl mb-3 text-primary md:text-base">{blurb}</p>
         <p className="mb-3 text-primaryBrand">{technologies}</p>
-        {/* TODO: use ButtonLink and implement cva for customized display */}
-        <Link
-          href={newPath}
-          className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center rounded bg-secondary hover:bg-gray-800 text-white"
-        >
+        <ButtonLink variant="secondary" href={newPath}>
           Read more
           <span className="sr-only">about {title}</span>
-        </Link>
+        </ButtonLink>
       </div>
     </div>
   );

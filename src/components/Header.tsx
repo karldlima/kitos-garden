@@ -110,7 +110,7 @@ export const Header = (): JSX.Element => {
               );
             })}
           </div>
-          <ButtonLink url="/contact">Contact</ButtonLink>
+          <ButtonLink href="/contact">Contact</ButtonLink>
         </div>
       </nav>
     </header>

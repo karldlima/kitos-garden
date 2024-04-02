@@ -1,32 +1,43 @@
-import type { ReactNode } from 'react';
+import { AnchorHTMLAttributes, forwardRef } from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
 import Link from 'next/link';
 
 import { cn } from './utils';
 
-interface LinkProps {
-  children: ReactNode;
-  url: string;
-  blank?: boolean;
+const buttonLinkVariants = cva(
+  'inline-flex rounded items-center text-white cursor-pointer',
+  {
+    variants: {
+      variant: {
+        primary:
+          'w-fit px-4 py-2 bg-primaryBrand font-semibold mt-6 hover:bg-highlight md:mt-0',
+        secondary:
+          'justify-center px-5 py-3 mr-3 text-base font-medium text-center bg-secondary hover:bg-gray-800',
+      },
+    },
+    defaultVariants: {
+      variant: 'primary',
+    },
+  },
+);
+
+export interface ButtonLinkProps
+  extends AnchorHTMLAttributes<HTMLAnchorElement>,
+    VariantProps<typeof buttonLinkVariants> {
+  href: string;
+  ref?: React.Ref<HTMLAnchorElement>;
   active?: boolean;
-  className?: string;
 }
 
-export const ButtonLink = ({
-  children,
-  url,
-  blank = false,
-  active = false,
-  className = undefined,
-}: LinkProps): JSX.Element => (
-  <Link
-    className={cn(
-      className ||
-        'rounded w-fit inline-flex items-center cursor-pointer text-white bg-primaryBrand hover:bg-highlight px-4 py-2 font-semibold mt-6 md:mt-0 ',
-    )}
-    href={url}
-    target={blank ? '_blank' : '_self'}
-  >
-    {children}
-  </Link>
+export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
+  ({ variant, active, ...props }, ref) => {
+    return (
+      <Link
+        className={cn(buttonLinkVariants({ variant }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
 );
 ButtonLink.displayName = 'ButtonLink';
