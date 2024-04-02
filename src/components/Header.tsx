@@ -98,11 +98,10 @@ export const Header = (): JSX.Element => {
                     key={uid}
                     href={link.url}
                     className={cn(
-                      router.pathname === link.url
-                        ? // TODO: convert scss to tailwind config?
-                          'navigation__link--active'
-                        : '',
-                      'ml-3 navigation__link',
+                      'ml-3 font-avenir antialiased text-lg hover:text-highlight',
+                      {
+                        'text-highlight': router.pathname === link.url,
+                      },
                     )}
                   >
                     {link.text}

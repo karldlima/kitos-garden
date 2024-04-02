@@ -48,11 +48,10 @@ export const Footer = (): JSX.Element => {
                     key={uid}
                     href={link.url}
                     className={cn(
-                      router.pathname === link.url
-                        ? // TODO: convert scss to tailwind config?
-                          'navigation__link--active'
-                        : '',
-                      'navigation__link',
+                      'font-avenir antialiased text-lg hover:text-highlight',
+                      {
+                        'text-highlight': router.pathname === link.url,
+                      },
                     )}
                   >
                     {link.text}

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import NextLink from 'next/link';
+import Link from 'next/link';
 
 import { cn } from './utils';
 
@@ -18,7 +18,7 @@ export const ButtonLink = ({
   active = false,
   className = undefined,
 }: LinkProps): JSX.Element => (
-  <NextLink
+  <Link
     className={cn(
       className ||
         'rounded w-fit inline-flex items-center cursor-pointer text-white bg-primaryBrand hover:bg-highlight px-4 py-2 font-semibold mt-6 md:mt-0 ',
@@ -27,6 +27,6 @@ export const ButtonLink = ({
     target={blank ? '_blank' : '_self'}
   >
     {children}
-  </NextLink>
+  </Link>
 );
 ButtonLink.displayName = 'ButtonLink';

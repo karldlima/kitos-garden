@@ -31,16 +31,3 @@ h4 {
 p {
   @apply font-avenir;
 }
-
-// TODO: move styling to a component.. like Link.tsx
-.navigation {
-  &__link {
-    @apply font-avenir antialiased text-lg;
-    &:hover {
-      color: var(--colour-highlight-text);
-    }
-    &--active {
-      color: var(--colour-highlight-text);
-    }
-  }
-}
