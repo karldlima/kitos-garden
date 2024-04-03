@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import { getPostIndex } from '@/content/helpers';
+import { getTechnologies } from '@/content/utils';
 import { Title, DisplayCard } from '@/components';
 
 // TODO: page props
@@ -27,7 +28,12 @@ export default function PostIndexPage({ postPageData }: PageProps) {
             className="inline-block w-full mb-4 box-border p-1 max-w-sm"
             key={id}
           >
-            <DisplayCard cardData={attributes} />
+            <DisplayCard
+              cardData={attributes}
+              keyWords={getTechnologies(attributes?.technologies?.data).join(
+                ' • ',
+              )}
+            />
           </div>
         ))}
       </div>

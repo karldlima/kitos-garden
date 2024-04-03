@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { parseISO, format } from 'date-fns';
 
-import { getTechnologies } from '@/content/utils';
 import { ButtonLink } from './ButtonLink';
 
 interface DisplayCard {
@@ -17,17 +16,17 @@ interface DisplayCard {
 
 interface DisplayCardProps {
   cardData: DisplayCard;
+  keyWords?: string;
 }
 
-export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
+export const DisplayCard = ({
+  cardData,
+  keyWords,
+}: DisplayCardProps): JSX.Element => {
   const router = useRouter();
 
   const { title, image, date, blurb, slug } = cardData ?? {};
   const newPath = `${router.asPath}/${slug}`;
-  // TODO: move content specific logic up component tree
-  const technologies = getTechnologies(cardData?.technologies?.data).join(
-    ' • ',
-  );
   return (
     <div className="max-w-sm max-h-sm md:max-h-[624px] bg-primary rounded-lg shadow">
       <Link href={newPath}>
@@ -51,7 +50,7 @@ export const DisplayCard = ({ cardData }: DisplayCardProps): JSX.Element => {
           </h2>
         </Link>
         <p className="text-xl mb-3 text-primary md:text-base">{blurb}</p>
-        <p className="mb-3 text-primaryBrand">{technologies}</p>
+        {!!keyWords && <p className="mb-3 text-primaryBrand">{keyWords}</p>}
         <ButtonLink variant="secondary" href={newPath}>
           Read more
           <span className="sr-only">about {title}</span>

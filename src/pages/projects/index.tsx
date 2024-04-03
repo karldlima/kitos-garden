@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import { getProjectIndex } from '@/content/helpers';
-import { getOrderedProjects } from '@/content/utils';
+import { getOrderedProjects, getTechnologies } from '@/content/utils';
 import { Title, DisplayCard } from '@/components';
 
 export interface PageProps {
@@ -27,7 +27,12 @@ export default function ProjectIndexPage({ projectPageData }: PageProps) {
             className="inline-block w-full mb-4 box-border p-1 max-w-sm"
             key={id}
           >
-            <DisplayCard cardData={attributes} />
+            <DisplayCard
+              cardData={attributes}
+              keyWords={getTechnologies(attributes?.technologies?.data).join(
+                ' • ',
+              )}
+            />
           </div>
         ))}
       </div>
