@@ -1,31 +1,34 @@
-import type { ReactNode } from 'react';
+import { forwardRef } from 'react';
+import { cva, VariantProps } from 'class-variance-authority';
 
 import { cn } from './utils';
 
+const buttonVariants = cva('rounded py-2 items-center', {
+  variants: {
+    variant: {
+      primary:
+        'w-fit inline-flex cursor-pointer text-white bg-primaryBrand px-4 font-semibold mt-6 hover:bg-highlight md:mt-0',
+      icon: 'flex px-3 text-primary',
+    },
+  },
+  defaultVariants: {
+    variant: 'primary',
+  },
+});
+
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  action?: React.MouseEventHandler<HTMLButtonElement>;
-  children: ReactNode;
-  className?: string;
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  ref?: React.Ref<HTMLButtonElement>;
 }
 
-// TODO: #1 add primary/secondary using cva
-export const Button = ({
-  action,
-  children,
-  className = undefined,
-  ...props
-}: ButtonProps): JSX.Element => (
-  <button
-    type="button"
-    className={cn(
-      className ||
-        'rounded w-fit inline-flex items-center cursor-pointer text-white bg-primaryBrand hover:bg-highlight px-4 py-2 font-semibold mt-6 md:mt-0',
-    )}
-    onClick={action}
-    {...props}
-  >
-    {children}
-  </button>
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ variant, children, ...props }, ref): JSX.Element => {
+    return (
+      <button className={cn(buttonVariants({ variant }))} ref={ref} {...props}>
+        {children}
+      </button>
+    );
+  },
 );
 Button.displayName = 'Button';

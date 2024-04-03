@@ -26,17 +26,18 @@ export interface ButtonLinkProps
     VariantProps<typeof buttonLinkVariants> {
   href: string;
   ref?: React.Ref<HTMLAnchorElement>;
-  active?: boolean;
 }
 
 export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
-  ({ variant, active, ...props }, ref) => {
+  ({ variant, children, ...props }, ref): JSX.Element => {
     return (
       <Link
         className={cn(buttonLinkVariants({ variant }))}
         ref={ref}
         {...props}
-      />
+      >
+        {children}
+      </Link>
     );
   },
 );

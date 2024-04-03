@@ -45,7 +45,6 @@ export default function Page({ homeData }: PageProps) {
               <p className="max-w-2xl mb-6 font-light text-secondary text-lg md:mb-8 md:text-base lg:text-xl">
                 {subtitle}
               </p>
-              {/* TODO: use ButtonLink and implement cva for customized display */}
               <Link
                 href="#about-me"
                 className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center rounded text-white"

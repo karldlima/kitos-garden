@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 import { headerData } from '@/data';
-import { HeroIcon, ButtonLink, cn } from '@/components';
+import { HeroIcon, ButtonLink, cn, Button } from '@/components';
 
 export const Header = (): JSX.Element => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,11 +36,10 @@ export const Header = (): JSX.Element => {
           />
         </Link>
         <div className="block md:hidden">
-          {/* TODO: #1 use Button component */}
-          <button
+          <Button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex items-center px-3 py-2 rounded text-primary"
+            variant="icon"
           >
             <svg
               aria-label="Expand"
@@ -64,7 +63,7 @@ export const Header = (): JSX.Element => {
             >
               <path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
             </svg>
-          </button>
+          </Button>
         </div>
         <div
           className={cn(

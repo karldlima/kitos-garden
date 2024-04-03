@@ -29,7 +29,7 @@ export default function ContactIndexPage() {
             <span className="sr-only">LinkedIn</span>
             <svg
               fill="currentColor"
-              enable-background="new 0 0 100 100"
+              enableBackground="new 0 0 100 100"
               viewBox="0 0 100 100"
               className="h-6 w-6"
             >
