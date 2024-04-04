@@ -1,6 +1,6 @@
 import { getEntry } from '../provider';
+import { Post, Wrapper } from '../types';
 
-// TODO: typing
 export const getPostIndex = async (): Promise<any> => {
   return await getEntry('/post-page', {
     fields: ['title', 'description'],
@@ -16,7 +16,7 @@ export const getPostIndex = async (): Promise<any> => {
 export interface PostParams {
   slug: string;
 }
-export const getPost = async (params: PostParams): Promise<any> => {
+export const getPost = async (params: PostParams): Promise<Wrapper<Post>> => {
   const responseData = await getEntry(
     `/posts?filters[slug][$eq]=${params.slug}&populate=*`,
   );

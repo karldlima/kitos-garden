@@ -6,12 +6,9 @@ import Markdown from 'react-markdown';
 
 import { getPostIndex, getPost, PostParams } from '@/content/helpers';
 import { getTechnologies } from '@/content/utils';
+import { Post, Wrapper } from '@/content/types';
 
-export interface PageProps {
-  post: any;
-}
-
-export default function SinglePostPage({ post }: PageProps) {
+export default function SinglePostPage({ post }: Wrapper<Post>['props']) {
   const router = useRouter();
 
   const { title, category, description, image, date, technologies } =
@@ -94,6 +91,6 @@ export async function getStaticProps({
   params,
 }: {
   params: PostParams;
-}): Promise<PageProps> {
+}): Promise<Wrapper<Post>> {
   return await getPost(params);
 }

@@ -6,12 +6,11 @@ import Markdown from 'react-markdown';
 
 import { getProjectIndex, getProject, ProjectParams } from '@/content/helpers';
 import { getTechnologies } from '@/content/utils';
+import { Project, Wrapper } from '@/content/types';
 
-export interface PageProps {
-  project: any;
-}
-
-export default function SingleProjectPage({ project }: PageProps) {
+export default function SingleProjectPage({
+  project,
+}: Wrapper<Project>['props']) {
   const router = useRouter();
 
   const { title, description, image, technologies, link } =
@@ -110,6 +109,6 @@ export async function getStaticProps({
   params,
 }: {
   params: ProjectParams;
-}): Promise<PageProps> {
+}): Promise<Wrapper<Project>> {
   return await getProject(params);
 }
