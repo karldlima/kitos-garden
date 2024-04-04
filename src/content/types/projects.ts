@@ -1,4 +1,15 @@
-import { Attributes } from '.';
+import { Attributes, BaseData, IndexAttributes } from '.';
+
+interface ProjectIndexAttributes extends IndexAttributes {
+  projects: BaseData<Project>;
+}
+
+export interface ProjectIndex {
+  data: {
+    id: number;
+    attributes: ProjectIndexAttributes;
+  };
+}
 
 interface Link {
   id: number;

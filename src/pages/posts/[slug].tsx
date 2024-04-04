@@ -6,7 +6,7 @@ import Markdown from 'react-markdown';
 
 import { getPostIndex, getPost, PostParams } from '@/content/helpers';
 import { getTechnologies } from '@/content/utils';
-import { Post, Wrapper } from '@/content/types';
+import { Post, PostIndex, Wrapper } from '@/content/types';
 
 export default function SinglePostPage({ post }: Wrapper<Post>['props']) {
   const router = useRouter();
@@ -76,7 +76,7 @@ export default function SinglePostPage({ post }: Wrapper<Post>['props']) {
 }
 
 export async function getStaticPaths() {
-  const posts: any = await getPostIndex();
+  const posts: PostIndex = await getPostIndex();
 
   const paths = posts?.data?.attributes?.posts?.data?.map(
     (post: { attributes: { slug: string } }) => ({

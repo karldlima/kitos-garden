@@ -1,5 +1,3 @@
-// TODO: post and project data mapping
-
 import { GetServerSideProps } from 'next';
 import { format, parseISO } from 'date-fns';
 

@@ -1,3 +1,8 @@
+export interface IndexAttributes {
+  description: string;
+  title: string;
+}
+
 export interface ImageData {
   id: number;
   attributes: {
