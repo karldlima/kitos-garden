@@ -3,13 +3,15 @@ import Head from 'next/head';
 import { getPostIndex } from '@/content/helpers';
 import { getTechnologies } from '@/content/utils';
 import { Title, DisplayCard } from '@/components';
+import { PostIndex } from '@/content/types';
 
-// TODO: page props
 export interface PageProps {
-  postPageData: any;
+  props: {
+    postPageData: PostIndex;
+  };
 }
 
-export default function PostIndexPage({ postPageData }: PageProps) {
+export default function PostIndexPage({ postPageData }: PageProps['props']) {
   const posts = postPageData?.data?.attributes?.posts?.data;
   const { title, description } = postPageData?.data?.attributes;
   return (
@@ -21,8 +23,6 @@ export default function PostIndexPage({ postPageData }: PageProps) {
       </Head>
       <Title title={title} subtitle={description} />
       <div className="columns-1 w-8/12 gap-y-12 mx-auto md:columns-2 md:w-8/12 lg:columns-3 lg:w-8/12 xl:w-7/12">
-        {/* TODO: postPageData mapping */}
-        {/* @ts-ignore */}
         {posts?.map(({ attributes, id }) => (
           <div
             className="inline-block w-full mb-4 box-border p-1 max-w-sm"
@@ -41,9 +41,8 @@ export default function PostIndexPage({ postPageData }: PageProps) {
   );
 }
 
-export async function getStaticProps(): Promise<{ props: PageProps }> {
-  // TODO: typing for posts data
-  const postIndex: any = await getPostIndex();
+export async function getStaticProps(): Promise<PageProps> {
+  const postIndex: PostIndex = await getPostIndex();
   return {
     props: {
       postPageData: postIndex,

@@ -1,8 +1,7 @@
-// @ts-nocheck
+import { Project, TechnologyData } from '../types';
 
-// TODO: typing
-export function getOrderedProjects(projects: any) {
-  const orderedProjects = [];
+export function getOrderedProjects(projects: Project[]): Project[] {
+  const orderedProjects: Project[] = [];
   projects.map((project, i) => {
     if (i % 2 !== 0) {
       orderedProjects.push(project);
@@ -16,7 +15,6 @@ export function getOrderedProjects(projects: any) {
   return orderedProjects;
 }
 
-// TODO: typing
-export function getTechnologies(technologies: any) {
+export function getTechnologies(technologies: TechnologyData[]): string[] {
   return technologies?.map((technology) => technology?.attributes?.Title);
 }

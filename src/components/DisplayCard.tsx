@@ -4,14 +4,14 @@ import { useRouter } from 'next/router';
 import { parseISO, format } from 'date-fns';
 
 import { ButtonLink } from './ButtonLink';
+import { ImageData } from '@/content/types';
 
 interface DisplayCard {
   title: string;
-  image: any;
+  image: { data: ImageData };
   date?: string;
   blurb?: string;
   slug?: string;
-  technologies?: any; // TODO
 }
 
 interface DisplayCardProps {

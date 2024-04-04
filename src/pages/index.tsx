@@ -17,9 +17,22 @@ const jsonLd = {
   },
 };
 
-// TODO: page props
 export interface PageProps {
-  homeData: any;
+  homeData: {
+    data: {
+      id: number;
+      attributes: {
+        title: string;
+        subtitle: string;
+        createdAt: string;
+        updatedAt: string;
+        publishedAt: string;
+        hero: {
+          data: null;
+        };
+      };
+    };
+  };
 }
 
 export default function Page({ homeData }: PageProps) {
@@ -115,7 +128,7 @@ export default function Page({ homeData }: PageProps) {
 }
 
 export async function getStaticProps(): Promise<{ props: PageProps }> {
-  const responseData: any = await getEntry('/home', {
+  const responseData: PageProps['homeData'] = await getEntry('/home', {
     populate: ['hero'],
   });
   return {

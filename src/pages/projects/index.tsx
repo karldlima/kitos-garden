@@ -3,12 +3,17 @@ import Head from 'next/head';
 import { getProjectIndex } from '@/content/helpers';
 import { getOrderedProjects, getTechnologies } from '@/content/utils';
 import { Title, DisplayCard } from '@/components';
+import { ProjectIndex } from '@/content/types';
 
 export interface PageProps {
-  projectPageData: any;
+  props: {
+    projectPageData: ProjectIndex;
+  };
 }
 
-export default function ProjectIndexPage({ projectPageData }: PageProps) {
+export default function ProjectIndexPage({
+  projectPageData,
+}: PageProps['props']) {
   const projects = projectPageData?.data?.attributes?.projects?.data;
   const { title, description } = projectPageData?.data?.attributes;
   const orderedProjects = getOrderedProjects(projects);
@@ -40,9 +45,8 @@ export default function ProjectIndexPage({ projectPageData }: PageProps) {
   );
 }
 
-export async function getStaticProps(): Promise<{ props: PageProps }> {
-  // TODO: typing for projects data
-  const projectIndex: any = await getProjectIndex();
+export async function getStaticProps(): Promise<PageProps> {
+  const projectIndex: ProjectIndex = await getProjectIndex();
   return {
     props: {
       projectPageData: projectIndex,

@@ -1,8 +1,7 @@
 import { getEntry } from '../provider';
-import { Project, Wrapper } from '../types';
+import { Project, ProjectIndex, Wrapper } from '../types';
 
-// TODO: typing
-export const getProjectIndex = async (): Promise<any> => {
+export const getProjectIndex = async (): Promise<ProjectIndex> => {
   return await getEntry('/project-page', {
     fields: ['title', 'description'],
     populate: {

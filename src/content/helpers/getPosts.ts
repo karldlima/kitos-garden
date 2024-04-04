@@ -1,7 +1,7 @@
 import { getEntry } from '../provider';
-import { Post, Wrapper } from '../types';
+import { Post, PostIndex, Wrapper } from '../types';
 
-export const getPostIndex = async (): Promise<any> => {
+export const getPostIndex = async (): Promise<PostIndex> => {
   return await getEntry('/post-page', {
     fields: ['title', 'description'],
     populate: {

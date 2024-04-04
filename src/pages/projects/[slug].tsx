@@ -66,8 +66,6 @@ export default function SingleProjectPage({
           <Markdown>{description}</Markdown>
         </p>
         <p className="flex text-primaryBrand mb-4 gap-4">
-          {/* TODO: project data mapping */}
-          {/* @ts-ignore */}
           {link?.map((l) => (
             <Link
               key={l?.id}
