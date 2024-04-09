@@ -17,7 +17,6 @@ export const Header = (): JSX.Element => {
     <header className="z-50 bg-primary border-b-2 sticky top-0">
       <nav
         role="navigation"
-        aria-description="A navigation element for the website"
         aria-label="Main Navigation"
         className="flex items-center justify-between flex-wrap md:p-4"
       >

@@ -36,7 +36,7 @@ export interface PageProps {
 }
 
 export default function Page({ homeData }: PageProps) {
-  const { title, subtitle } = homeData?.data?.attributes;
+  const { title, subtitle } = homeData?.data?.attributes ?? {};
   return (
     <>
       <Head>

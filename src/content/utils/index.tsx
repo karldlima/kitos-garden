@@ -2,12 +2,12 @@ import { Project, TechnologyData } from '../types';
 
 export function getOrderedProjects(projects: Project[]): Project[] {
   const orderedProjects: Project[] = [];
-  projects.map((project, i) => {
+  projects?.map((project, i) => {
     if (i % 2 !== 0) {
       orderedProjects.push(project);
     }
   });
-  projects.map((project, i) => {
+  projects?.map((project, i) => {
     if (i % 2 === 0) {
       orderedProjects.push(project);
     }

@@ -13,7 +13,7 @@ export interface PageProps {
 
 export default function PostIndexPage({ postPageData }: PageProps['props']) {
   const posts = postPageData?.data?.attributes?.posts?.data;
-  const { title, description } = postPageData?.data?.attributes;
+  const { title, description } = postPageData?.data?.attributes ?? {};
   return (
     <>
       <Head>

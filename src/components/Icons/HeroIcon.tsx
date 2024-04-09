@@ -17,7 +17,9 @@ export const HeroIcon = ({
   ...props
 }: HeroIconProps): JSX.Element => {
   const [svg, setSvg] = useState<string>('');
+  // eslint-disable-next-line no-unused-vars
   const [isLoaded, setIsLoaded] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [isErrored, setIsErrored] = useState(false);
 
   useEffect(() => {

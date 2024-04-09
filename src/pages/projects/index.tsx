@@ -15,7 +15,7 @@ export default function ProjectIndexPage({
   projectPageData,
 }: PageProps['props']) {
   const projects = projectPageData?.data?.attributes?.projects?.data;
-  const { title, description } = projectPageData?.data?.attributes;
+  const { title, description } = projectPageData?.data?.attributes ?? {};
   const orderedProjects = getOrderedProjects(projects);
   return (
     <>

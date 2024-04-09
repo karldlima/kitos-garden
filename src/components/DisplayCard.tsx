@@ -6,7 +6,7 @@ import { parseISO, format } from 'date-fns';
 import { ButtonLink } from './ButtonLink';
 import { ImageData } from '@/content/types';
 
-interface DisplayCard {
+interface CardData {
   title: string;
   image: { data: ImageData };
   date?: string;
@@ -15,7 +15,7 @@ interface DisplayCard {
 }
 
 interface DisplayCardProps {
-  cardData: DisplayCard;
+  cardData: CardData;
   keyWords?: string;
 }
 

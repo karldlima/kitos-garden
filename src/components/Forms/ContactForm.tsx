@@ -80,7 +80,7 @@ export function ContactForm() {
       });
   };
 
-  return !!formSubmitted ? (
+  return formSubmitted ? (
     <div role="alert" className="h-full flex items-center">
       <h2>Message sent successfully!</h2>
     </div>
