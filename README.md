@@ -29,6 +29,9 @@ We follow a development branch naming convention: `<work type>/<issue-number>-<s
 
 The code in main branch should pass tests, build cleanly, and always be current. main branch needs these qualities so that feature branches created by a team start from a known good version of code. We branch off of main and push pull requests into staging branch, before making a pull request from staging to main once the acceptance criteria is satisfied.
 
+Wanting to deploy to production (staging to main)?
+<a href="https://github.com/karldlima/kitos-garden/compare/main...staging?quick_pull=1&template=main.md">Staging Release :rocket:</a>
+
 ### ESLint and Type Checking
 
 I've configured a Husky pre-commit hook and lint-staged to run linting, typechecking and prettifying any changes being pushed to main branch to ensure integrity of the software. ESLint rules can be modified at `.eslintrc.json`.
