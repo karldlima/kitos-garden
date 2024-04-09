@@ -20,9 +20,18 @@ I'm planning to use CSS variables for theming (if need be), along with tailwind 
 
 We use conventional commits. For more information you can check out the [Conventional Commit Homepage](https://www.conventionalcommits.org/en/v1.0.0/).
 
+We follow a development branch naming convention: `<work type>/<issue-number>-<short-description>`
+
+1. Start clasifying by work type. Examples: bugfix, feature, refactor.
+2. Use dashes - to separate words.
+3. Include related issue number (if any).
+4. Describe the topic using two or three words.
+
+The code in main branch should pass tests, build cleanly, and always be current. main branch needs these qualities so that feature branches created by a team start from a known good version of code. We branch off of main and push pull requests into staging branch, before making a pull request from staging to main once the acceptance criteria is satisfied.
+
 ### ESLint and Type Checking
 
-I've configured a Husky pre-commit hook and lint-staged to run linting, typechecking and prettifying any changes being pushed to main branch to ensure integrity of the software.
+I've configured a Husky pre-commit hook and lint-staged to run linting, typechecking and prettifying any changes being pushed to main branch to ensure integrity of the software. ESLint rules can be modified at `.eslintrc.json`.
 
 Alternatively the following commands can be run to check:
 
