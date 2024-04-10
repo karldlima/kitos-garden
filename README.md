@@ -15,7 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Design system
 
-We use CSS variables for theming, along with tailwind config for optimal reusability within JS. We're also maintaining these reusable base components so they can be transferred over to a custom component library at some point. We're using cva for component variants.
+We use CSS variables for theming and tailwind config for optimal reusability within JS. We're also maintaining these reusable base components so they can be transferred over to a custom component library at some point. We're using cva for component variants.
 
 ### Git
 
@@ -23,7 +23,7 @@ We use conventional commits. For more information you can check out the [Convent
 
 We follow a development branch naming convention: `<work type>/<issue-number>-<short-description>`
 
-1. Start clasifying by work type. Examples: bugfix, feature, refactor.
+1. Start clasifying by work type. Examples: bugfix, feature, hotfix, docs, release, refactor.
 2. Use dashes - to separate words.
 3. Include related issue number (if any).
 4. Describe the topic using two or three words.
