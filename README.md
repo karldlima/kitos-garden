@@ -7,6 +7,7 @@ The project article for this repo can be found [here](http://www.gardenofkarl.co
 First, run the development server:
 
 ```bash
+pnpm i
 pnpm run dev
 ```
 
@@ -14,7 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Design system
 
-I'm planning to use CSS variables for theming (if need be), along with tailwind config for optimal reusability. I'm also attempting to maintain these reusable base components so they can be transferred over to a custom component library at some point. I plan to use cva for component variants.
+We use CSS variables for theming and tailwind config for optimal reusability within JS. We're also maintaining these reusable base components so they can be transferred over to a custom component library at some point. We're using cva for component variants.
 
 ### Git
 
@@ -22,7 +23,7 @@ We use conventional commits. For more information you can check out the [Convent
 
 We follow a development branch naming convention: `<work type>/<issue-number>-<short-description>`
 
-1. Start clasifying by work type. Examples: bugfix, feature, refactor.
+1. Start clasifying by work type. Examples: bugfix, feature, rebase, hotfix, docs, release, refactor.
 2. Use dashes - to separate words.
 3. Include related issue number (if any).
 4. Describe the topic using two or three words.
@@ -34,7 +35,7 @@ Wanting to deploy to production (staging to main)?
 
 ### ESLint and Type Checking
 
-I've configured a Husky pre-commit hook and lint-staged to run linting, typechecking and prettifying any changes being pushed to main branch to ensure integrity of the software. ESLint rules can be modified at `.eslintrc.json`.
+We've configured a Husky pre-commit hook and lint-staged to run linting, typechecking and prettifying any changes being pushed to main branch to ensure integrity of the software. ESLint rules can be modified at `.eslintrc.json`.
 
 Alternatively the following commands can be run to check:
 
