@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check if PR is from staging
-        if: ${{ github.event.pull_request.base.ref != 'staging' }}
+        if: ${{ github.event.pull_request.head.ref != 'staging' }}
         run: exit 1
