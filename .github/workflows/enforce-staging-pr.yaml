@@ -1,0 +1,14 @@
+name: Enforce Staging Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  enforce-staging:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if PR is from staging
+        if: ${{ github.event.pull_request.base.ref != 'staging' }}
+        run: exit 1
