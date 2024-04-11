@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { ContactForm } from '@/components/Forms';
+import { ContactForm } from '@/components/forms';
 import { Title } from '@/components';
 
 export default function ContactIndexPage() {
