@@ -10,7 +10,7 @@
     "test": "jest --coverage --verbose",
     "test:watch": "pnpm run test --watch",
     "lint": "next lint",
-    "check-types": "tsc --noemit",
+    "check-types": "tsc --noEmit",
     "prepare": "husky"
   },
   "dependencies": {
