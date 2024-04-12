@@ -28,6 +28,7 @@ const config: Config = {
         primary: 'var(--colour-primary-bg)',
         secondary: 'var(--colour-secondary-bg)',
         highlight: 'var(--colour-highlight-bg)',
+        'disabled-primaryBrand': '#aba2bc',
       },
       colors: {
         primary: 'var(--colour-primary-text)',

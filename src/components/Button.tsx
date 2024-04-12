@@ -7,7 +7,7 @@ const buttonVariants = cva('rounded py-2 items-center', {
   variants: {
     variant: {
       primary:
-        'w-fit inline-flex cursor-pointer text-white bg-primaryBrand px-4 font-semibold mt-6 hover:bg-highlight md:mt-0',
+        'w-fit inline-flex cursor-pointer text-white bg-primaryBrand px-4 font-semibold mt-6 enabled:hover:bg-highlight disabled:bg-disabled-primaryBrand disabled:pointer-events-none md:mt-0',
       icon: 'flex px-3 text-primary',
     },
   },
