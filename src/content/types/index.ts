@@ -12,66 +12,10 @@ export interface ImageData {
     width: number;
     height: number;
     formats: {
-      large: {
-        ext: string;
-        url: string;
-        hash: string;
-        mime: string;
-        name: string;
-        path?: string;
-        size: number;
-        width: number;
-        height: number;
-        provider_metadata: {
-          public_id: string;
-          resource_type: string;
-        };
-      };
-      small: {
-        ext: string;
-        url: string;
-        hash: string;
-        mime: string;
-        name: string;
-        path?: string;
-        size: number;
-        width: number;
-        height: number;
-        provider_metadata: {
-          public_id: string;
-          resource_type: string;
-        };
-      };
-      medium: {
-        ext: string;
-        url: string;
-        hash: string;
-        mime: string;
-        name: string;
-        path?: string;
-        size: number;
-        width: number;
-        height: number;
-        provider_metadata: {
-          public_id: string;
-          resource_type: string;
-        };
-      };
-      thumbnail: {
-        ext: string;
-        url: string;
-        hash: string;
-        mime: string;
-        name: string;
-        path?: string;
-        size: number;
-        width: number;
-        height: number;
-        provider_metadata: {
-          public_id: string;
-          resource_type: string;
-        };
-      };
+      large: ImageFormat;
+      small: ImageFormat;
+      medium: ImageFormat;
+      thumbnail: ImageFormat;
     };
     hash: string;
     ext: string;
@@ -86,6 +30,22 @@ export interface ImageData {
     };
     createdAt: string;
     updatedAt: string;
+  };
+}
+
+interface ImageFormat {
+  ext: string;
+  url: string;
+  hash: string;
+  mime: string;
+  name: string;
+  path?: string;
+  size: number;
+  width: number;
+  height: number;
+  provider_metadata: {
+    public_id: string;
+    resource_type: string;
   };
 }
 
