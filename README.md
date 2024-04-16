@@ -17,6 +17,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 We use CSS variables for theming and tailwind config for optimal reusability within JS. We're also maintaining these reusable base components so they can be transferred over to a custom component library at some point. We're using cva for component variants.
 
+### Tests
+
+We use Jest and React Testing Library for unit testing purposes, with an intent to use storybook for local component development.
+
 ### Git
 
 We use conventional commits. For more information you can check out the [Conventional Commit Homepage](https://www.conventionalcommits.org/en/v1.0.0/).
