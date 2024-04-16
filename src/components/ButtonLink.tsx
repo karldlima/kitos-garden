@@ -28,6 +28,7 @@ export interface ButtonLinkProps
   ref?: React.Ref<HTMLAnchorElement>;
 }
 
+// A Link component styled as a button
 export const ButtonLink = forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   ({ variant, children, ...props }, ref): JSX.Element => {
     return (
