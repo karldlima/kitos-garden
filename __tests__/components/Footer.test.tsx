@@ -31,7 +31,7 @@ describe('Footer', () => {
 
     expect(postsLink).toHaveAttribute('href', '/posts');
   });
-  it('contains the correct url for icon', async () => {
+  it('contains the correct url for icon', () => {
     const { getByAltText } = render(<Footer />);
 
     const imageElement = getByAltText('kitos garden icon');
