@@ -91,17 +91,17 @@ export default function Page({ homeData }: PageProps) {
           <p className="mt-2 w-4/5 md:mt-4 md:w-3/5 mx-auto leading-6">
             Fueled by curiosity, I ventured to Melbourne, merging my
             problem-solving skills with a career in software engineering. With
-            over 6 years of experience, I specialize in React/Redux, JavaScript,
-            testing libraries, and analytics, crafting scalable solutions for
-            diverse industries like Telecom, Consulting, Banking, and Car
-            Rental.
+            over 6 years of experience, I specialize in React/Vue, JavaScript,
+            testing libraries, Node.js (Nestjs) and analytics, crafting scalable
+            solutions for diverse industries like Telecom, Consulting, Banking,
+            and Car Rental.
           </p>
           <p className="mt-2 w-4/5 md:mt-4 md:w-3/5 mx-auto leading-6">
             I&apos;m interested in responsive website development, efficient
-            monorepo implementation, performance optimization, accessibility
-            compliance, end-to-end testing, maintenance, support, and search
-            engine optimization for small to medium business&apos; and larger
-            companies.
+            monorepo implementation, design systems, performance optimization,
+            accessibility compliance, end-to-end testing, maintenance, legacy
+            support, and search engine optimization for small to medium
+            business&apos; and larger companies.
           </p>
           <h3 className="mt-6 w-4/5 md:mt-10 md:w-3/5 mx-auto">
             Beyond the Screen
