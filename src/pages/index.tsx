@@ -83,7 +83,7 @@ export default function Page({ homeData }: PageProps) {
         </section>
         <section id="about-me" className="bg-primary">
           <p className="mt-14 w-4/5 mx-auto leading-6 md:w-3/5 md:mt-28">
-            I&apos;m Karl. A software developer that enjoys creating reliable
+            I&apos;m Karl. A software developer who enjoys creating reliable
             customer facing solutions for growth focused business&apos;.
             Here&apos;s a little about me and what I do for work:
           </p>
