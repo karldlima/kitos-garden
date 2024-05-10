@@ -7,5 +7,6 @@
   },
   "env": {
     "jest": true
-  }
+  },
+  "rules": { "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }] }
 }
