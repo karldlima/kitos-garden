@@ -3,6 +3,7 @@ export * from './Icons';
 export * from './Button';
 export * from './ButtonLink';
 export * from './Footer';
+export * from './Input';
 export * from './Title';
 export * from './DisplayCard';
 export * from './Dropdown';
