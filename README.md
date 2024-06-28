@@ -1,6 +1,7 @@
 This repository contains the source code for my personal portfolio and blog site. It is built using Next.js SSR, Tailwind CSS, and Strapi CMS.
 
 The project article for this repo can be found [here](http://www.gardenofkarl.com/projects/digital-garden)
+The CMS API hosted on Heroku can be found [here](https://github.com/karldlima/kitos-garden-seeds)
 
 ## Getting Started
 
