@@ -21,7 +21,7 @@ export async function getEntry(path: string, urlParamsObject = {}) {
     const mergedOptions = {
       next: { revalidate: 60 },
       headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_CMS_API_TOKEN}`,
+        Authorization: `Bearer ${process.env.CMS_API_TOKEN}`,
         'Content-Type': 'application/json',
       },
     };
