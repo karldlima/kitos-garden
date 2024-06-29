@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import Head from 'next/head';
 import { HeroIcon } from '@/components';
-import { getEntry } from '../content/provider';
+import { getEntry } from '../content/helpers/provider';
 
 const jsonLd = {
   '@context': 'https://schema.org/',
@@ -128,7 +128,7 @@ export default function Page({ homeData }: PageProps) {
 }
 
 export async function getStaticProps(): Promise<{ props: PageProps }> {
-  const responseData: PageProps['homeData'] = await getEntry('/home', {
+  const responseData = await getEntry<PageProps['homeData']>('/home', {
     populate: ['hero'],
   });
   return {
