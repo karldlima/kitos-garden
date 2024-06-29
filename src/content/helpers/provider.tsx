@@ -1,5 +1,7 @@
 import qs from 'qs';
 
+import { apiClient } from './api';
+
 function getURL(path = '') {
   return `${process.env.NEXT_PUBLIC_CMS_API_URL}${path}`;
 }
@@ -13,26 +15,20 @@ export function getMedia(url: string | null) {
     return url;
   }
 
-  return `${getURL()}${url}`;
+  return `${getURL(url)}`;
 }
 
-export async function getEntry(path: string, urlParamsObject = {}) {
+export async function getEntry<T>(
+  path: string,
+  urlParamsObject = {},
+): Promise<T> {
   try {
-    const mergedOptions = {
-      next: { revalidate: 60 },
-      headers: {
-        Authorization: `Bearer ${process.env.CMS_API_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
-    };
-
     const queryString = qs.stringify(urlParamsObject);
-    const requestUrl = `${getURL(
+    const response = await apiClient.get<T>(
       `/api${path}${queryString ? `?${queryString}` : ''}`,
-    )}`;
-
-    const response = await fetch(requestUrl, mergedOptions);
-    const data = await response.json();
+    );
+    const data = await response.data;
+    console.log('data: ', data);
     return data;
   } catch (error) {
     console.error(error);
