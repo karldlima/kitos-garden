@@ -6,7 +6,7 @@ import Markdown from 'react-markdown';
 
 import { getPostIndex, getPost, PostParams } from '@/content/helpers';
 import { getTechnologies } from '@/content/utils';
-import { Post, PostIndex, Wrapper } from '@/content/types';
+import { NotFound, Post, PostIndex, Wrapper } from '@/content/types';
 
 export default function SinglePostPage({ post }: Wrapper<Post>['props']) {
   const router = useRouter();
@@ -76,21 +76,28 @@ export default function SinglePostPage({ post }: Wrapper<Post>['props']) {
 }
 
 export async function getStaticPaths() {
-  const posts: PostIndex = await getPostIndex();
+  try {
+    const posts: PostIndex = await getPostIndex();
 
-  const paths = posts?.data?.attributes?.posts?.data?.map(
-    (post: { attributes: { slug: string } }) => ({
-      params: { slug: post.attributes.slug },
-    }),
-  );
+    const paths = posts?.data?.attributes?.posts?.data?.map(
+      (post: { attributes: { slug: string } }) => ({
+        params: { slug: post.attributes.slug },
+      }),
+    );
 
-  return { paths, fallback: false };
+    return { paths, fallback: false };
+  } catch (err) {
+    console.error(`on Posts index: ${err}`);
+    return {
+      notFound: true,
+    };
+  }
 }
 
 export async function getStaticProps({
   params,
 }: {
   params: PostParams;
-}): Promise<Wrapper<Post>> {
+}): Promise<Wrapper<Post> | NotFound> {
   return await getPost(params);
 }

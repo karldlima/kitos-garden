@@ -100,5 +100,9 @@ export interface Wrapper<T> {
   props: { [key: string]: BaseData<T> };
 }
 
+export interface NotFound {
+  notFound: boolean;
+}
+
 export * from './posts';
 export * from './projects';

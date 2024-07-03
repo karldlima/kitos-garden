@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { getProjectIndex } from '@/content/helpers';
 import { getOrderedProjects, getTechnologies } from '@/content/utils';
 import { Title, DisplayCard } from '@/components';
-import { ProjectIndex } from '@/content/types';
+import { NotFound, ProjectIndex } from '@/content/types';
 
 export interface PageProps {
   props: {
@@ -45,11 +45,18 @@ export default function ProjectIndexPage({
   );
 }
 
-export async function getStaticProps(): Promise<PageProps> {
-  const projectIndex: ProjectIndex = await getProjectIndex();
-  return {
-    props: {
-      projectPageData: projectIndex,
-    },
-  };
+export async function getStaticProps(): Promise<PageProps | NotFound> {
+  try {
+    const projectIndex: ProjectIndex = await getProjectIndex();
+    return {
+      props: {
+        projectPageData: projectIndex,
+      },
+    };
+  } catch (err) {
+    console.error(`on Projects index: ${err}`);
+    return {
+      notFound: true,
+    };
+  }
 }

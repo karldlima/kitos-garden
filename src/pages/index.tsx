@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { HeroIcon } from '@/components';
 import { getEntry } from '../content/helpers/provider';
+import { NotFound } from '@/content/types';
 
 const jsonLd = {
   '@context': 'https://schema.org/',
@@ -127,13 +128,22 @@ export default function Page({ homeData }: PageProps) {
   );
 }
 
-export async function getStaticProps(): Promise<{ props: PageProps }> {
-  const responseData = await getEntry<PageProps['homeData']>('/home', {
-    populate: ['hero'],
-  });
-  return {
-    props: {
-      homeData: responseData,
-    },
-  };
+export async function getStaticProps(): Promise<
+  { props: PageProps } | NotFound
+> {
+  try {
+    const responseData = await getEntry<PageProps['homeData']>('/home', {
+      populate: ['hero'],
+    });
+    return {
+      props: {
+        homeData: responseData,
+      },
+    };
+  } catch (err) {
+    console.error(`on Home index: ${err}`);
+    return {
+      notFound: true,
+    };
+  }
 }

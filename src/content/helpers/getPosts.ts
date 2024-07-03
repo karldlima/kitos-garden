@@ -1,5 +1,5 @@
 import { getEntry } from './provider';
-import { BaseData, Post, PostIndex, Wrapper } from '../types';
+import { BaseData, NotFound, Post, PostIndex, Wrapper } from '../types';
 
 export const getPostIndex = async (): Promise<PostIndex> => {
   return await getEntry<PostIndex>('/post-page', {
@@ -16,13 +16,22 @@ export const getPostIndex = async (): Promise<PostIndex> => {
 export interface PostParams {
   slug: string;
 }
-export const getPost = async (params: PostParams): Promise<Wrapper<Post>> => {
-  const responseData = await getEntry<BaseData<Post>>(
-    `/posts?filters[slug][$eq]=${params.slug}&populate=*`,
-  );
-  return {
-    props: {
-      post: responseData,
-    },
-  };
+export const getPost = async (
+  params: PostParams,
+): Promise<Wrapper<Post> | NotFound> => {
+  try {
+    const responseData = await getEntry<BaseData<Post>>(
+      `/posts?filters[slug][$eq]=${params.slug}&populate=*`,
+    );
+    return {
+      props: {
+        post: responseData,
+      },
+    };
+  } catch (err) {
+    console.error(`on Post: ${err}`);
+    return {
+      notFound: true,
+    };
+  }
 };

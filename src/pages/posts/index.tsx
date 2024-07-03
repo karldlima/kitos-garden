@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { getPostIndex } from '@/content/helpers';
 import { getTechnologies } from '@/content/utils';
 import { Title, DisplayCard } from '@/components';
-import { PostIndex } from '@/content/types';
+import { NotFound, PostIndex } from '@/content/types';
 
 export interface PageProps {
   props: {
@@ -41,11 +41,18 @@ export default function PostIndexPage({ postPageData }: PageProps['props']) {
   );
 }
 
-export async function getStaticProps(): Promise<PageProps> {
-  const postIndex: PostIndex = await getPostIndex();
-  return {
-    props: {
-      postPageData: postIndex,
-    },
-  };
+export async function getStaticProps(): Promise<PageProps | NotFound> {
+  try {
+    const postIndex: PostIndex = await getPostIndex();
+    return {
+      props: {
+        postPageData: postIndex,
+      },
+    };
+  } catch (err) {
+    console.error(`on Posts index: ${err}`);
+    return {
+      notFound: true,
+    };
+  }
 }

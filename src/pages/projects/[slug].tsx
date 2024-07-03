@@ -6,7 +6,7 @@ import Markdown from 'react-markdown';
 
 import { getProjectIndex, getProject, ProjectParams } from '@/content/helpers';
 import { getTechnologies } from '@/content/utils';
-import { Project, ProjectIndex, Wrapper } from '@/content/types';
+import { NotFound, Project, ProjectIndex, Wrapper } from '@/content/types';
 
 export default function SingleProjectPage({
   project,
@@ -93,20 +93,27 @@ export default function SingleProjectPage({
 }
 
 export async function getStaticPaths() {
-  const projects: ProjectIndex = await getProjectIndex();
+  try {
+    const projects: ProjectIndex = await getProjectIndex();
 
-  const paths = projects?.data?.attributes?.projects?.data?.map(
-    (project: { attributes: { slug: string } }) => ({
-      params: { slug: project.attributes.slug },
-    }),
-  );
-  return { paths, fallback: false };
+    const paths = projects?.data?.attributes?.projects?.data?.map(
+      (project: { attributes: { slug: string } }) => ({
+        params: { slug: project.attributes.slug },
+      }),
+    );
+    return { paths, fallback: false };
+  } catch (err) {
+    console.error(`on Projects index: ${err}`);
+    return {
+      notFound: true,
+    };
+  }
 }
 
 export async function getStaticProps({
   params,
 }: {
   params: ProjectParams;
-}): Promise<Wrapper<Project>> {
+}): Promise<Wrapper<Project> | NotFound> {
   return await getProject(params);
 }

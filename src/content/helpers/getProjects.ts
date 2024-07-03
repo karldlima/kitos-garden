@@ -1,5 +1,5 @@
 import { getEntry } from './provider';
-import { Project, ProjectIndex, Wrapper, BaseData } from '../types';
+import { Project, ProjectIndex, Wrapper, BaseData, NotFound } from '../types';
 
 export const getProjectIndex = async (): Promise<ProjectIndex> => {
   return await getEntry<ProjectIndex>('/project-page', {
@@ -18,13 +18,20 @@ export interface ProjectParams {
 }
 export const getProject = async (
   params: ProjectParams,
-): Promise<Wrapper<Project>> => {
-  const responseData = await getEntry<BaseData<Project>>(
-    `/projects?filters[slug][$eq]=${params.slug}&populate=*`,
-  );
-  return {
-    props: {
-      project: responseData,
-    },
-  };
+): Promise<Wrapper<Project> | NotFound> => {
+  try {
+    const responseData = await getEntry<BaseData<Project>>(
+      `/projects?filters[slug][$eq]=${params.slug}&populate=*`,
+    );
+    return {
+      props: {
+        project: responseData,
+      },
+    };
+  } catch (err) {
+    console.error(`on Project: ${err}`);
+    return {
+      notFound: true,
+    };
+  }
 };
