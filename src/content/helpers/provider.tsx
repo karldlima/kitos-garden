@@ -22,18 +22,10 @@ export async function getEntry<T>(
   path: string,
   urlParamsObject = {},
 ): Promise<T> {
-  try {
-    const queryString = qs.stringify(urlParamsObject);
-    const response = await apiClient.get<T>(
-      `/api${path}${queryString ? `?${queryString}` : ''}`,
-    );
-    const data = await response.data;
-    console.log('data: ', data);
-    return data;
-  } catch (error) {
-    console.error(error);
-    throw new Error(
-      `Please check if your server is running and you set all the required tokens.`,
-    );
-  }
+  const queryString = qs.stringify(urlParamsObject);
+  const response = await apiClient.get<T>(
+    `/api${path}${queryString ? `?${queryString}` : ''}`,
+  );
+  const data = await response.data;
+  return data;
 }
